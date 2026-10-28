@@ -1,0 +1,26 @@
+#node_modules
+node_modules
+/.pnp
+.pnp.js
+
+# Testing & screenshots
+/coverage
+*.png
+take_screenshots.py
+
+# Production build
+/dist
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
+
+# Vite
+vite.config.js.timestamp-*
