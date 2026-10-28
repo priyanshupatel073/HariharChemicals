@@ -12,7 +12,8 @@ import {
   Thermometer, 
   Gauge, 
   Settings, 
-  Sparkles 
+  Sparkles,
+  Camera
 } from 'lucide-react';
 
 export default function EquipmentExplorer() {
@@ -205,7 +206,7 @@ export default function EquipmentExplorer() {
           </div>
         </div>
 
-        {/* Authentic Plant Imagery Montage */}
+        {/* Plant Imagery Montage - Reserved Blank Spaces */}
         <div
           style={{
             display: 'grid',
@@ -220,30 +221,63 @@ export default function EquipmentExplorer() {
               borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
               position: 'relative',
-              boxShadow: 'var(--shadow-md)',
-              border: '1px solid var(--brand-grey-light)'
+              boxShadow: 'var(--shadow-sm)',
+              border: '2px dashed var(--brand-grey-light)',
+              backgroundColor: 'var(--bg-secondary)',
+              height: '320px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '24px'
             }}
           >
-            <img
-              src="/images/cropped/plant_reactors.jpg"
-              alt="Harihar Chemicals Industrial Reaction Suites & Synthesis Plant"
-              style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }}
-            />
             <div
               style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                padding: '16px 20px',
-                background: 'linear-gradient(transparent, rgba(15, 23, 42, 0.9))',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                color: 'var(--brand-grey-medium)',
+                gap: '8px'
+              }}
+            >
+              <div
+                style={{
+                  width: '52px',
+                  height: '52px',
+                  borderRadius: '12px',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid var(--brand-grey-light)',
+                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--brand-grey-medium)'
+                }}
+              >
+                <Camera size={24} />
+              </div>
+              <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--brand-grey-slate)' }}>
+                Manufacturing Plant Photo Space
+              </span>
+              <span style={{ fontSize: '0.76rem', color: 'var(--brand-grey-medium)' }}>
+                Space reserved for reactor &amp; distillation facility photography
+              </span>
+            </div>
+
+            <div
+              style={{
+                padding: '14px 18px',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'rgba(15, 23, 42, 0.9)',
                 color: '#FFFFFF'
               }}
             >
-              <div style={{ fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
                 Manufacturing Core
               </div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+              <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
                 High-Volume Jacketed Reaction Vessels &amp; Distillation Towers
               </div>
             </div>
@@ -254,30 +288,63 @@ export default function EquipmentExplorer() {
               borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
               position: 'relative',
-              boxShadow: 'var(--shadow-md)',
-              border: '1px solid var(--brand-grey-light)'
+              boxShadow: 'var(--shadow-sm)',
+              border: '2px dashed var(--brand-grey-light)',
+              backgroundColor: 'var(--bg-secondary)',
+              height: '320px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '24px'
             }}
           >
-            <img
-              src="/images/cropped/qc_lab.jpg"
-              alt="Harihar Chemicals Quality Control & IR Dyeing Laboratory"
-              style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }}
-            />
             <div
               style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                padding: '16px 20px',
-                background: 'linear-gradient(transparent, rgba(15, 23, 42, 0.9))',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                color: 'var(--brand-grey-medium)',
+                gap: '8px'
+              }}
+            >
+              <div
+                style={{
+                  width: '52px',
+                  height: '52px',
+                  borderRadius: '12px',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid var(--brand-grey-light)',
+                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--brand-grey-medium)'
+                }}
+              >
+                <Camera size={24} />
+              </div>
+              <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--brand-grey-slate)' }}>
+                Analytical Testing &amp; QC Lab Photo Space
+              </span>
+              <span style={{ fontSize: '0.76rem', color: 'var(--brand-grey-medium)' }}>
+                Space reserved for IR dyeing &amp; purity analysis lab photography
+              </span>
+            </div>
+
+            <div
+              style={{
+                padding: '14px 18px',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'rgba(15, 23, 42, 0.9)',
                 color: '#FFFFFF'
               }}
             >
-              <div style={{ fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
                 Analytical Testing
               </div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+              <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
                 Automatic Infra-Red Dyeing &amp; TLC Purity Development Suite
               </div>
             </div>

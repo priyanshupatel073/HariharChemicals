@@ -11,7 +11,8 @@ import {
   CheckCircle2, 
   Activity, 
   Download,
-  Building2
+  Building2,
+  Camera
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/chemicalsData';
 
@@ -231,26 +232,48 @@ export default function Hero({ onOpenRfq }) {
                 border: '1px solid var(--brand-grey-light)'
               }}
             >
-              {/* Plant Entrance Photo Badge */}
+              {/* Plant Entrance Photo Badge - Reserved Blank Space */}
               <div
                 style={{
                   position: 'relative',
                   height: '270px',
                   borderRadius: 'calc(var(--radius-lg) - 6px)',
                   overflow: 'hidden',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  backgroundColor: '#F8FAFC',
+                  border: '2px dashed #CBD5E1',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
               >
-                <img
-                  src="/images/cropped/factory_gate.jpg"
-                  alt="Harihar Chemicals Manufacturing Facility Plot J-5248 GIDC Ankleshwar"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                />
+                <div style={{ textAlign: 'center', pointerEvents: 'none', padding: '20px' }}>
+                  <div
+                    style={{
+                      width: '50px',
+                      height: '50px',
+                      borderRadius: '50%',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid #E2E8F0',
+                      boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 10px',
+                      color: '#94A3B8'
+                    }}
+                  >
+                    <Camera size={22} />
+                  </div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 700, color: '#475569' }}>
+                    Plant Facility Photo Space
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#94A3B8', marginTop: '3px' }}>
+                    Space reserved for manufacturing facility photography
+                  </div>
+                </div>
+
                 <div
                   style={{
                     position: 'absolute',

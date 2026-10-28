@@ -12,7 +12,8 @@ import {
   Globe2, 
   Sparkles,
   Phone,
-  Mail
+  Mail,
+  Camera
 } from 'lucide-react';
 
 export default function AboutPage({ onOpenRfq }) {
@@ -72,29 +73,61 @@ export default function AboutPage({ onOpenRfq }) {
               </div>
             </div>
 
-            {/* Factory Gate Real Photo */}
+            {/* Factory Gate Photo Space - Reserved for Upload */}
             <div
               style={{
                 borderRadius: 'var(--radius-lg)',
                 overflow: 'hidden',
-                boxShadow: 'var(--shadow-lg)',
-                border: '1px solid var(--brand-grey-light)',
-                position: 'relative'
+                boxShadow: 'var(--shadow-sm)',
+                border: '2px dashed var(--brand-grey-light)',
+                backgroundColor: 'var(--bg-secondary)',
+                minHeight: '340px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                padding: '24px'
               }}
             >
-              <img
-                src="/images/cropped/factory_gate.jpg"
-                alt="Harihar Chemicals Ankleshwar Gate J-5248"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
               <div
                 style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  padding: '16px 20px',
-                  background: 'linear-gradient(transparent, rgba(15, 23, 42, 0.9))',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flex: 1,
+                  color: 'var(--brand-grey-medium)',
+                  gap: '8px'
+                }}
+              >
+                <div
+                  style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '14px',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid var(--brand-grey-light)',
+                    boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--brand-grey-medium)'
+                  }}
+                >
+                  <Building2 size={26} color="var(--brand-red)" />
+                </div>
+                <span style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--brand-grey-slate)' }}>
+                  Manufacturing Facility Photo Space
+                </span>
+                <span style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)' }}>
+                  Reserved for high-resolution exterior plant photography
+                </span>
+              </div>
+
+              <div
+                style={{
+                  padding: '14px 18px',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: 'rgba(15, 23, 42, 0.9)',
                   color: '#FFFFFF'
                 }}
               >

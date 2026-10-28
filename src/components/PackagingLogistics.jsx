@@ -8,7 +8,9 @@ import {
   CheckCircle2, 
   ArrowRight,
   Sparkles,
-  Building2
+  Building2,
+  Boxes,
+  Camera
 } from 'lucide-react';
 
 export default function PackagingLogistics({ onOpenRfq }) {
@@ -45,20 +47,44 @@ export default function PackagingLogistics({ onOpenRfq }) {
           }}
           className="packaging-hero-grid"
         >
-          {/* Packaging Photo */}
+          {/* Packaging Photo Space - Reserved for Upload */}
           <div
             style={{
               borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
-              border: '1px solid var(--brand-grey-light)',
-              boxShadow: 'var(--shadow-sm)'
+              border: '2px dashed var(--brand-grey-light)',
+              backgroundColor: '#FFFFFF',
+              boxShadow: 'var(--shadow-sm)',
+              minHeight: '280px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '28px',
+              textAlign: 'center'
             }}
           >
-            <img
-              src="/images/cropped/packaging_showcase.jpg"
-              alt="Harihar Chemicals Certified Packaging: 1kg Pouch, 25kg Bags, 25kg Fiber Drums, 100kg HDPE Drums"
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
+            <div
+              style={{
+                width: '54px',
+                height: '54px',
+                borderRadius: '14px',
+                backgroundColor: 'var(--brand-red-light)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--brand-red)',
+                marginBottom: '12px'
+              }}
+            >
+              <Package size={26} />
+            </div>
+            <div style={{ fontSize: '0.94rem', fontWeight: 700, color: 'var(--brand-grey-dark)' }}>
+              Export Packaging Photo Space
+            </div>
+            <div style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)', marginTop: '4px', maxWidth: '300px' }}>
+              Reserved for 1kg Pouch, 25kg Bag, 25kg Fiber Drum &amp; 100kg HDPE Drum photography
+            </div>
           </div>
 
           {/* Logistics Capabilities */}
