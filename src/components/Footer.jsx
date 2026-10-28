@@ -96,28 +96,25 @@ export default function Footer({ onOpenRfq }) {
           {/* Column 1: Brand & Heritage */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
-              <div
+              <img
+                src="/images/cropped/harihar_round_logo.png"
+                alt="Harihar Chemicals Logo"
                 style={{
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #D32F2F 0%, #9A0007 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#FFFFFF',
-                  fontWeight: 900,
-                  fontSize: '1.1rem'
+                  width: '46px',
+                  height: '46px',
+                  objectFit: 'contain',
+                  borderRadius: '50%',
+                  backgroundColor: '#FFFFFF',
+                  padding: '2px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
                 }}
-              >
-                HC
-              </div>
+              />
               <div>
                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#FFFFFF' }}>
                   HARIHAR <span style={{ color: 'var(--brand-red)' }}>CHEMICALS</span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: '#94A3B8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Since 1997 • "Jay Mahadev" TM
+                  "Jay Mahadev" TM • G.I.D.C. Ankleshwar
                 </div>
               </div>
             </div>
@@ -342,3 +339,4 @@ export default function Footer({ onOpenRfq }) {
     </footer>
   );
 }
+

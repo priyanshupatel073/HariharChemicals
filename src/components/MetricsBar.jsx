@@ -76,3 +76,4 @@ export default function MetricsBar() {
     </section>
   );
 }
+

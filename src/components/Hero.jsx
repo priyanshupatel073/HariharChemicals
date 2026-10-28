@@ -194,7 +194,7 @@ export default function Hero({ onOpenRfq }) {
                   28+
                 </div>
                 <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--brand-grey-medium)' }}>
-                  Years Heritage (Est. 1997)
+                  Years Manufacturing Excellence
                 </div>
               </div>
 
@@ -428,3 +428,4 @@ export default function Hero({ onOpenRfq }) {
     </section>
   );
 }
+

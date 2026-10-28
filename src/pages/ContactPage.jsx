@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import PageBanner from '../components/PageBanner';
 import { COMPANY_INFO } from '../data/chemicalsData';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Building2, 
-  Send, 
-  CheckCircle2, 
-  ShieldCheck, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Building2,
+  Send,
+  CheckCircle2,
+  ShieldCheck,
   FileDown,
   Sparkles
 } from 'lucide-react';
@@ -344,3 +344,4 @@ export default function ContactPage({ onOpenRfq }) {
     </div>
   );
 }
+

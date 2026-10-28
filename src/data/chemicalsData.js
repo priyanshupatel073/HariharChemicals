@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   name: "Harihar Chemicals",
   legalName: "Harihar Chemicals Industries",
   brandTrademark: "Jay Mahadev (TM)",
-  established: "1997 (Corporate Group Est. 2006)",
+  established: "Group Est. 2006",
   tagline: "Manufacturer & Exporter of High-Performance Naphthols, Fast Colour Bases & Dyes",
   subTagline: "Precision Azoic Colorants & Intermediate Synthesis for Global Cellulosic Textile Industries",
   mission: "To develop and nurture long-lasting business relationships with our customers by increasing the ambit and application of our colors, providing ace quality and economical coloring solutions that meet the changing needs of our global clients.",
@@ -75,7 +75,7 @@ export const COMPANY_INFO = {
     }
   ],
   metrics: [
-    { label: "Manufacturing Heritage", value: 28, suffix: "+ Years", subtext: "Serving global textile industries since 1997" },
+    { label: "Manufacturing Heritage", value: 25, suffix: "+ Years", subtext: "Serving global textile industries with consistent quality" },
     { label: "Annual Synthesis Capacity", value: 3000, suffix: "+ MT", subtext: "High-purity Naphthols & Fast Colour Bases" },
     { label: "Domestic & Global Clients", value: 5500, suffix: "+", subtext: "Satisfied textile mills, master dyers & compounders" },
     { label: "Specialized Base & Dye Grades", value: 24, suffix: "+", subtext: "Engineered for cotton, rayon, jute, and linen" },
@@ -1365,3 +1365,4 @@ export const PACKAGING_CATALOG = [
     image: "/images/cropped/packaging_showcase.jpg"
   }
 ];
+

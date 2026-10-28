@@ -588,3 +588,4 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
     </section>
   );
 }
+

@@ -66,3 +66,4 @@ export default function PageBanner({ title, subtitle, tag, onOpenRfq }) {
     </div>
   );
 }
+

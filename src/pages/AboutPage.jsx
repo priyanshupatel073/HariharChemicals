@@ -50,7 +50,7 @@ export default function AboutPage({ onOpenRfq }) {
                 Dedicated to Precision Colorants for Over Two Decades
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--brand-grey-slate)', lineHeight: 1.7, marginBottom: '16px' }}>
-                <strong>HARIHAR</strong> is one of the most reputed and reliable Naphthols and Bases manufacturer and exporter from India. Harihar group was established in the year 2006 (with plant operations dating back to 1997) with an aim to manufacture Naphthols and Bases Dyes.
+                <strong>HARIHAR</strong> is one of the most reputed and reliable Naphthols and Bases manufacturer and exporter from India. Harihar group was established with an aim to manufacture high-performance Naphthols and Bases Dyes.
               </p>
               <p style={{ fontSize: '0.95rem', color: 'var(--brand-grey-slate)', lineHeight: 1.7, marginBottom: '24px' }}>
                 From a start the organization has grown to the present level of technical expertise and managerial competence to cater the need of domestic and global market. One of the biggest strength of the Harihar group is its ability to develop customized products. This policy of the company has helped to be close ties and mutual trusts with customer globally, thus increasing worldwide acceptance of its products.
@@ -58,8 +58,8 @@ export default function AboutPage({ onOpenRfq }) {
 
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 <div style={{ backgroundColor: 'var(--bg-secondary)', padding: '14px 20px', borderRadius: '8px', border: '1px solid var(--brand-grey-light)' }}>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: 'var(--brand-red)' }}>1997</div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)', fontWeight: 600 }}>Inception of Plant</div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 900, color: 'var(--brand-red)' }}>25+ Yrs</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)', fontWeight: 600 }}>Industrial Heritage</div>
                 </div>
                 <div style={{ backgroundColor: 'var(--bg-secondary)', padding: '14px 20px', borderRadius: '8px', border: '1px solid var(--brand-grey-light)' }}>
                   <div style={{ fontSize: '1.3rem', fontWeight: 900, color: 'var(--brand-red)' }}>5,500+</div>
@@ -289,3 +289,4 @@ export default function AboutPage({ onOpenRfq }) {
     </div>
   );
 }
+

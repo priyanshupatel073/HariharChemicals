@@ -84,3 +84,4 @@ export default function PlantPage({ onOpenRfq }) {
     </div>
   );
 }
+

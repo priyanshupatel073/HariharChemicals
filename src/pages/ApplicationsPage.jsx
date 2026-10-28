@@ -22,3 +22,4 @@ export default function ApplicationsPage({ onOpenRfq }) {
     </div>
   );
 }
+

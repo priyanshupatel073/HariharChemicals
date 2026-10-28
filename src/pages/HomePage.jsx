@@ -161,3 +161,4 @@ export default function HomePage({ onOpenRfq }) {
     </div>
   );
 }
+

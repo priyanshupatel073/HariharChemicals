@@ -128,47 +128,29 @@ export default function Navbar({ onOpenRfq }) {
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
-              gap: '14px'
+              gap: '12px'
             }}
           >
-            {/* Hexagonal HC Emblem */}
-            <div
+            {/* Authentic Harihar Chemicals Emblem */}
+            <img
+              src="/images/cropped/harihar_round_logo.png"
+              alt="Harihar Chemicals Logo"
               style={{
                 width: '46px',
                 height: '46px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #D32F2F 0%, #9A0007 100%)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#FFFFFF',
-                boxShadow: '0 4px 14px rgba(211, 47, 47, 0.35)',
-                position: 'relative',
-                overflow: 'hidden',
+                objectFit: 'contain',
+                borderRadius: '50%',
+                boxShadow: '0 3px 10px rgba(0, 0, 0, 0.12)',
                 flexShrink: 0
               }}
-            >
-              <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.05em', lineHeight: 1, opacity: 0.9 }}>HC</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1 }}>HC</span>
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '2px',
-                  width: '16px',
-                  height: '2px',
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '1px'
-                }}
-              />
-            </div>
+            />
 
             {/* Typography */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span
                   style={{
-                    fontSize: 'clamp(0.92rem, 3.8vw, 1.28rem)',
+                    fontSize: 'clamp(0.98rem, 3.8vw, 1.28rem)',
                     fontWeight: 900,
                     letterSpacing: '-0.02em',
                     color: 'var(--brand-grey-dark)',
@@ -180,7 +162,7 @@ export default function Navbar({ onOpenRfq }) {
                 </span>
                 <span
                   style={{
-                    fontSize: 'clamp(0.92rem, 3.8vw, 1.28rem)',
+                    fontSize: 'clamp(0.98rem, 3.8vw, 1.28rem)',
                     fontWeight: 800,
                     letterSpacing: '-0.02em',
                     color: 'var(--brand-red)',
@@ -194,27 +176,14 @@ export default function Navbar({ onOpenRfq }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
                 <span
                   style={{
-                    fontSize: 'clamp(0.58rem, 2.2vw, 0.68rem)',
+                    fontSize: 'clamp(0.6rem, 2.2vw, 0.7rem)',
                     fontWeight: 700,
-                    letterSpacing: '0.08em',
+                    letterSpacing: '0.12em',
                     textTransform: 'uppercase',
                     color: 'var(--brand-grey-medium)'
                   }}
                 >
                   Naphthols, Bases &amp; Dyes
-                </span>
-                <span
-                  className="d-none-xs"
-                  style={{
-                    fontSize: '0.62rem',
-                    padding: '1px 6px',
-                    borderRadius: '4px',
-                    backgroundColor: 'var(--brand-red-light)',
-                    color: 'var(--brand-red-dark)',
-                    fontWeight: 700
-                  }}
-                >
-                  Est. 1997
                 </span>
               </div>
             </div>

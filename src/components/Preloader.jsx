@@ -34,25 +34,24 @@ export default function Preloader() {
         pointerEvents: fading ? 'none' : 'all'
       }}
     >
-      {/* Hexagonal HC Emblem with Pulsing Ruby Glow */}
+      {/* Authentic Harihar Chemicals Emblem */}
       <div
         style={{
-          width: '68px',
-          height: '68px',
-          borderRadius: '16px',
-          background: 'linear-gradient(135deg, #D32F2F 0%, #9A0007 100%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#FFFFFF',
+          width: '76px',
+          height: '76px',
+          borderRadius: '50%',
+          overflow: 'hidden',
           boxShadow: '0 0 35px rgba(211, 47, 47, 0.6)',
           marginBottom: '20px',
-          animation: 'pulseGlow 1.8s infinite ease-in-out'
+          backgroundColor: '#FFFFFF',
+          padding: '4px'
         }}
       >
-        <span style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em', lineHeight: 1, opacity: 0.9 }}>HC</span>
-        <span style={{ fontSize: '1.4rem', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1 }}>HC</span>
+        <img
+          src="/images/cropped/harihar_round_logo.png"
+          alt="Harihar Chemicals Logo"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
       </div>
 
       <div style={{ textAlign: 'center' }}>
@@ -92,3 +91,4 @@ export default function Preloader() {
     </div>
   );
 }
+
