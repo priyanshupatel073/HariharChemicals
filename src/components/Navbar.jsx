@@ -140,71 +140,26 @@ export default function Navbar({ onOpenRfq }) {
             gap: '16px'
           }}
         >
-          {/* Brand Logo & Name */}
+          {/* Brand Official Logo Lockup */}
           <Link
             to="/"
             style={{
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
               flexShrink: 0
             }}
           >
-            {/* Authentic Circular Emblem */}
             <img
-              src="/images/cropped/harihar_round_logo.png"
-              alt="Harihar Chemicals Logo"
+              src="/images/harihar_full_logo.png"
+              alt="Harihar Chemicals"
               style={{
-                width: '42px',
-                height: '42px',
+                height: '44px',
+                width: 'auto',
                 objectFit: 'contain',
-                borderRadius: '50%',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                flexShrink: 0
+                display: 'block'
               }}
             />
-
-            {/* Typography */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '5px', lineHeight: 1 }}>
-                <span
-                  style={{
-                    fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                    fontWeight: 900,
-                    letterSpacing: '-0.02em',
-                    color: 'var(--brand-grey-dark)',
-                    fontFamily: 'var(--font-sans)'
-                  }}
-                >
-                  HARIHAR
-                </span>
-                <span
-                  style={{
-                    fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.02em',
-                    color: 'var(--brand-red)',
-                    fontFamily: 'var(--font-sans)'
-                  }}
-                >
-                  CHEMICALS
-                </span>
-              </div>
-              <span
-                style={{
-                  fontSize: '0.62rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'var(--brand-grey-medium)',
-                  marginTop: '3px',
-                  lineHeight: 1
-                }}
-              >
-                Naphthols, Bases &amp; Dyes
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation Links (Single-Line, Minimalist & Aligned) */}
