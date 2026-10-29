@@ -20,7 +20,51 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
   const [selectedBaseCode, setSelectedBaseCode] = useState('Scarlet G');
   const [activeDepth, setActiveDepth] = useState('4%'); // '1%' or '4%'
   const [mobileNaphtholOpen, setMobileNaphtholOpen] = useState(true);
-  const [mobileBaseOpen, setMobileBaseOpen] = useState(true);
+  const [mobileBaseOpen, setMobileBaseOpen] = useState(false);
+
+  // Mobile Accordion Mutually-Exclusive Handlers
+  const handleSelectNaphthol = (code) => {
+    setSelectedNaphtholCode(code);
+    // When Naphthol is selected: Naphthol card closes, Color Base card opens
+    setMobileNaphtholOpen(false);
+    setMobileBaseOpen(true);
+  };
+
+  const handleSelectBase = (code) => {
+    setSelectedBaseCode(code);
+    // Vice versa for reverse: Color Base card closes, Naphthol card opens
+    setMobileBaseOpen(false);
+    setMobileNaphtholOpen(true);
+  };
+
+  const handleToggleNaphtholHeader = () => {
+    if (mobileNaphtholOpen) {
+      setMobileNaphtholOpen(false);
+    } else {
+      setMobileNaphtholOpen(true);
+      setMobileBaseOpen(false);
+    }
+  };
+
+  const handleToggleBaseHeader = () => {
+    if (mobileBaseOpen) {
+      setMobileBaseOpen(false);
+    } else {
+      setMobileBaseOpen(true);
+      setMobileNaphtholOpen(false);
+    }
+  };
+
+  const handleToggleAll = () => {
+    const anyOpen = mobileNaphtholOpen || mobileBaseOpen;
+    if (anyOpen) {
+      setMobileNaphtholOpen(false);
+      setMobileBaseOpen(false);
+    } else {
+      setMobileNaphtholOpen(true);
+      setMobileBaseOpen(false);
+    }
+  };
 
   // Find current combination or fallback
   const currentCombination = SHADE_COMBINATIONS.find(
@@ -71,11 +115,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
             <div className="mobile-collapse-toolbar mobile-collapse-only" style={{ marginBottom: '16px' }}>
               <button
                 type="button"
-                onClick={() => {
-                  const anyOpen = mobileNaphtholOpen || mobileBaseOpen;
-                  setMobileNaphtholOpen(!anyOpen);
-                  setMobileBaseOpen(!anyOpen);
-                }}
+                onClick={handleToggleAll}
                 style={{
                   width: '100%',
                   display: 'flex',
@@ -94,7 +134,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
               >
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Sliders size={14} />
-                  <span>{(mobileNaphtholOpen || mobileBaseOpen) ? 'Collapse Selectors to View Shade Result' : 'Expand Selectors to Change Color'}</span>
+                  <span>{(mobileNaphtholOpen || mobileBaseOpen) ? 'Collapse Selectors to View Shade Result' : 'Open Selectors to Change Shade'}</span>
                 </span>
                 <ChevronDown size={15} style={{ transform: (mobileNaphtholOpen || mobileBaseOpen) ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }} />
               </button>
@@ -104,7 +144,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
             <div className="shade-selector-card" style={{ marginBottom: '24px' }}>
               <div 
                 className="shade-selector-header"
-                onClick={() => setMobileNaphtholOpen(!mobileNaphtholOpen)}
+                onClick={handleToggleNaphtholHeader}
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -143,7 +183,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
                       <button
                         key={n.code}
                         type="button"
-                        onClick={() => setSelectedNaphtholCode(n.code)}
+                        onClick={() => handleSelectNaphthol(n.code)}
                         style={{
                           padding: '10px 8px',
                           borderRadius: 'var(--radius-sm)',
@@ -181,7 +221,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
             <div className="shade-selector-card" style={{ marginBottom: '24px' }}>
               <div 
                 className="shade-selector-header"
-                onClick={() => setMobileBaseOpen(!mobileBaseOpen)}
+                onClick={handleToggleBaseHeader}
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -235,7 +275,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
                       <button
                         key={b.code}
                         type="button"
-                        onClick={() => setSelectedBaseCode(b.code)}
+                        onClick={() => handleSelectBase(b.code)}
                         style={{
                           display: 'flex',
                           alignItems: 'center',
