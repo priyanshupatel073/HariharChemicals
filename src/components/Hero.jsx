@@ -122,7 +122,7 @@ export default function Hero({ onOpenRfq }) {
                 marginBottom: '30px'
               }}
             >
-              Manufacturer and global exporter of high-yield <strong>Harithols (Naphthols)</strong> and diazo <strong>Fast Colour Bases</strong>.
+              Manufacturer and global exporter of high-yield <strong>Harithols (Naphthols)</strong> and diazo <strong>Fast Colour Bases</strong>. 
               Engineered for insoluble in-situ azo color generation across cellulosic textiles, cotton yarns, printing pastes, and export pigments.
             </p>
 
@@ -269,7 +269,25 @@ export default function Hero({ onOpenRfq }) {
                   Plot J-5248 • G.I.D.C. Ankleshwar
                 </div>
 
-
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '12px',
+                    right: '12px',
+                    backgroundColor: 'rgba(211, 47, 47, 0.92)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    color: '#FFFFFF',
+                    padding: '5px 12px',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  ● Active Synthesis Units
+                </div>
               </div>
 
               {/* Technical Specifications Matrix Card */}

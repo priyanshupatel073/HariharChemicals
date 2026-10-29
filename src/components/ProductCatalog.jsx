@@ -13,6 +13,9 @@ import {
   Layers, 
   ExternalLink,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  Sliders,
   ShieldCheck,
   Download
 } from 'lucide-react';
@@ -22,6 +25,8 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [copiedCas, setCopiedCas] = useState(null);
   const [selectedProductModal, setSelectedProductModal] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   const handleCopyCas = (cas) => {
     navigator.clipboard.writeText(cas);
@@ -54,6 +59,12 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
       (p.shadeRange && p.shadeRange.toLowerCase().includes(q))
     );
   });
+
+  const isSearching = searchQuery.trim().length > 0;
+  const effectivelyExpanded = isExpanded || isSearching;
+  const initialDesktopCards = 6;
+  const remainingCount = Math.max(0, filteredProducts.length - initialDesktopCards);
+  const canCollapse = filteredProducts.length > 3;
 
   return (
     <section id="catalog" className="section" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -188,15 +199,87 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
           </div>
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Catalog Status Toolbar with Quick Expand/Collapse Pill */}
         <div
+          className="catalog-status-bar"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-            gap: '24px'
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            marginBottom: '20px',
+            fontSize: '0.88rem',
+            color: 'var(--brand-grey-slate)'
           }}
-          className="catalog-grid"
         >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{ fontWeight: 600, color: 'var(--brand-grey-dark)' }}>
+              Showing {effectivelyExpanded || filteredProducts.length <= initialDesktopCards ? filteredProducts.length : initialDesktopCards} of {filteredProducts.length} chemicals
+            </span>
+            {isSearching && (
+              <span
+                style={{
+                  fontSize: '0.78rem',
+                  backgroundColor: '#FEF3C7',
+                  color: '#92400E',
+                  padding: '3px 9px',
+                  borderRadius: '12px',
+                  fontWeight: 600,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+              >
+                Search Filter Active
+              </span>
+            )}
+          </div>
+
+          {canCollapse && !isSearching && (
+            <button
+              type="button"
+              onClick={() => {
+                const nextState = !effectivelyExpanded;
+                setIsExpanded(nextState);
+                if (!nextState) {
+                  const catalogElem = document.getElementById('catalog');
+                  if (catalogElem) {
+                    catalogElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 14px',
+                borderRadius: '20px',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                backgroundColor: effectivelyExpanded ? 'var(--bg-tertiary)' : 'rgba(217, 35, 45, 0.08)',
+                color: effectivelyExpanded ? 'var(--brand-grey-slate)' : 'var(--brand-red)',
+                border: effectivelyExpanded ? '1px solid var(--brand-grey-light)' : '1px solid rgba(217, 35, 45, 0.25)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <span>{effectivelyExpanded ? 'Collapse to Compact' : 'Expand Full Catalog'}</span>
+              {effectivelyExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            </button>
+          )}
+        </div>
+
+        {/* Collapsible Product Cards Grid */}
+        <div className={`catalog-collapsible-wrapper ${effectivelyExpanded ? 'is-expanded' : 'is-collapsed'}`}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
+              gap: '24px'
+            }}
+            className="catalog-grid"
+          >
           {filteredProducts.map((product) => {
             const isNaphthol = product.category.includes('Naphthol');
             return (
@@ -404,7 +487,101 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
               </div>
             );
           })}
+          </div>
+
+          {/* Fade Curtain Overlay when Collapsed */}
+          {!effectivelyExpanded && canCollapse && (
+            <div
+              className="catalog-fade-overlay"
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '240px',
+                background: 'linear-gradient(to bottom, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.85) 45%, rgba(248, 250, 252, 1) 100%)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                paddingBottom: '24px',
+                pointerEvents: 'none',
+                zIndex: 10
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setIsExpanded(true)}
+                className="btn btn-primary"
+                style={{
+                  pointerEvents: 'auto',
+                  boxShadow: '0 8px 24px rgba(217, 35, 45, 0.35)',
+                  padding: '13px 30px',
+                  fontSize: '0.94rem',
+                  fontWeight: 700,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderRadius: '30px',
+                  cursor: 'pointer',
+                  transform: 'translateY(0)',
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+              >
+                <span>View All {filteredProducts.length} Chemicals ({remainingCount} More)</span>
+                <ChevronDown size={18} />
+              </button>
+            </div>
+          )}
         </div>
+
+        {/* Bottom Collapse Button when Expanded */}
+        {effectivelyExpanded && canCollapse && !isSearching && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '32px'
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                setIsExpanded(false);
+                const catalogElem = document.getElementById('catalog');
+                if (catalogElem) {
+                  catalogElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                borderRadius: '30px',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid var(--brand-grey-light)',
+                color: 'var(--brand-grey-dark)',
+                fontWeight: 700,
+                fontSize: '0.92rem',
+                boxShadow: 'var(--shadow-sm)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--brand-red)';
+                e.currentTarget.style.color = 'var(--brand-red)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--brand-grey-light)';
+                e.currentTarget.style.color = 'var(--brand-grey-dark)';
+              }}
+            >
+              <ChevronUp size={16} />
+              <span>Collapse Catalog (Show Less)</span>
+            </button>
+          </div>
+        )}
 
         {/* Empty State */}
         {filteredProducts.length === 0 && (
@@ -581,6 +758,20 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
       </div>
 
       <style>{`
+        .catalog-collapsible-wrapper {
+          position: relative;
+          overflow: hidden;
+          transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .catalog-collapsible-wrapper.is-collapsed {
+          max-height: 880px;
+        }
+        .catalog-collapsible-wrapper.is-expanded {
+          max-height: 14000px;
+        }
+        .catalog-fade-overlay {
+          transition: opacity 0.3s ease;
+        }
         @media (max-width: 768px) {
           .catalog-search-box {
             min-width: 100% !important;
@@ -588,6 +779,18 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
           }
         }
         @media (max-width: 640px) {
+          .catalog-collapsible-wrapper.is-collapsed {
+            max-height: 720px;
+          }
+          .catalog-fade-overlay {
+            height: 200px !important;
+            padding-bottom: 16px !important;
+          }
+          .catalog-fade-overlay button {
+            width: calc(100% - 32px) !important;
+            justify-content: center !important;
+            font-size: 0.88rem !important;
+          }
           .catalog-grid {
             grid-template-columns: 1fr !important;
           }
