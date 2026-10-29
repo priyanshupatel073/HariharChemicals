@@ -7,8 +7,8 @@ export default function Preloader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFading(true);
-      setTimeout(() => setLoading(false), 400);
-    }, 700);
+      setTimeout(() => setLoading(false), 300);
+    }, 450);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,71 +23,61 @@ export default function Preloader() {
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: '#0F172A',
+        backgroundColor: 'rgba(255, 255, 255, 0.70)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
         zIndex: 9999,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         opacity: fading ? 0 : 1,
-        transition: 'opacity 0.4s ease',
+        transition: 'opacity 0.3s ease',
         pointerEvents: fading ? 'none' : 'all'
       }}
     >
-      {/* Authentic Harihar Chemicals Emblem */}
+      {/* Minimalist Logo Emblem with Spinning Ring */}
       <div
         style={{
-          width: '76px',
-          height: '76px',
-          borderRadius: '50%',
-          overflow: 'hidden',
-          boxShadow: '0 0 35px rgba(211, 47, 47, 0.6)',
-          marginBottom: '20px',
-          backgroundColor: '#FFFFFF',
-          padding: '4px'
+          position: 'relative',
+          width: '58px',
+          height: '58px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
-        <img
-          src="/images/cropped/harihar_round_logo.png"
-          alt="Harihar Chemicals Logo"
-          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-        />
-      </div>
-
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '1.4rem', fontWeight: 900, letterSpacing: '0.05em', color: '#FFFFFF' }}>
-          HARIHAR <span style={{ color: '#D32F2F' }}>CHEMICALS</span>
-        </div>
-        <div style={{ fontSize: '0.78rem', color: '#94A3B8', letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: '4px' }}>
-          Precision Naphthols, Bases &amp; Dyes
-        </div>
-      </div>
-
-      {/* Progress Line */}
-      <div
-        style={{
-          width: '180px',
-          height: '3px',
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          borderRadius: '2px',
-          overflow: 'hidden',
-          marginTop: '28px',
-          position: 'relative'
-        }}
-      >
+        {/* Subtle Minimalist Spinner Track & Accent */}
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '60%',
-            backgroundColor: '#D32F2F',
-            borderRadius: '2px',
-            animation: 'shimmer 1.2s infinite linear'
+            inset: 0,
+            borderRadius: '50%',
+            border: '2.5px solid rgba(211, 47, 47, 0.15)',
+            borderTopColor: '#D32F2F',
+            animation: 'hc-spin 0.75s linear infinite'
+          }}
+        />
+
+        {/* Minimalist Trademark Emblem */}
+        <img
+          src="/images/cropped/harihar_round_logo.png"
+          alt="Harihar"
+          style={{
+            width: '42px',
+            height: '42px',
+            borderRadius: '50%',
+            objectFit: 'contain'
           }}
         />
       </div>
+
+      <style>{`
+        @keyframes hc-spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 }
