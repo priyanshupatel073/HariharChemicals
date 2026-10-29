@@ -75,6 +75,7 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
 
         {/* Filter & Search Bar */}
         <div
+          className="catalog-filter-bar"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -90,7 +91,7 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
           }}
         >
           {/* Category Tabs */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="catalog-tabs-wrap" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             <button
               type="button"
               onClick={() => setActiveTab('ALL')}
@@ -124,7 +125,7 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
                 transition: 'all 0.18s ease'
               }}
             >
-              Naphthols / Harithols ({NAPHTHOL_PRODUCTS.length})
+              Naphthols ({NAPHTHOL_PRODUCTS.length})
             </button>
 
             <button
@@ -142,12 +143,12 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
                 transition: 'all 0.18s ease'
               }}
             >
-              Fast Colour Bases ({FAST_BASE_PRODUCTS.length})
+              Fast Bases ({FAST_BASE_PRODUCTS.length})
             </button>
           </div>
 
           {/* Search Input Box */}
-          <div style={{ position: 'relative', minWidth: '280px', flex: '1 0 260px', maxWidth: '420px' }}>
+          <div className="catalog-search-box" style={{ position: 'relative', minWidth: '240px', flex: '1 0 240px', maxWidth: '420px' }}>
             <Search
               size={17}
               style={{
@@ -448,17 +449,18 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '20px'
+              padding: '16px'
             }}
             onClick={() => setSelectedProductModal(null)}
           >
             <div
+              className="product-detail-modal-card"
               style={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: 'var(--radius-lg)',
                 maxWidth: '720px',
                 width: '100%',
-                maxHeight: '90vh',
+                maxHeight: '92vh',
                 overflowY: 'auto',
                 padding: '36px',
                 position: 'relative',
@@ -548,7 +550,7 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
               )}
 
               {/* Modal CTA Buttons */}
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
+              <div className="product-modal-actions" style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                 <a
                   href="/docs/Harihar_Chemicals_Shade_Card.pdf"
                   target="_blank"
@@ -579,9 +581,36 @@ export default function ProductCatalog({ onSelectProductForRfq }) {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          .catalog-search-box {
+            min-width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
         @media (max-width: 640px) {
           .catalog-grid {
             grid-template-columns: 1fr !important;
+          }
+          .catalog-filter-bar {
+            padding: 12px 14px !important;
+            gap: 12px !important;
+          }
+          .catalog-tabs-wrap {
+            width: 100%;
+          }
+          .catalog-tabs-wrap button {
+            flex: 1 1 auto;
+            padding: 8px 12px !important;
+            font-size: 0.82rem !important;
+            text-align: center;
+          }
+          .product-detail-modal-card {
+            padding: 22px 16px !important;
+          }
+          .product-modal-actions a,
+          .product-modal-actions button {
+            width: 100% !important;
+            justify-content: center !important;
           }
         }
       `}</style>

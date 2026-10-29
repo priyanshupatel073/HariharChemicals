@@ -165,6 +165,7 @@ export default function Hero({ onOpenRfq }) {
 
           {/* Action Buttons Group */}
           <div
+            className="hero-buttons-group"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -398,14 +399,42 @@ export default function Hero({ onOpenRfq }) {
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 992px) {
+          #hero-section {
+            background-position: center top !important;
+            padding: 38px 0 44px 0 !important;
+          }
           .hero-overlay-fade {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.90) 65%, rgba(255, 255, 255, 0.5) 100%) !important;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 55%, rgba(255, 255, 255, 0.88) 100%) !important;
           }
         }
         @media (max-width: 576px) {
+          .hero-buttons-group .btn-primary {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .hero-buttons-group .btn-secondary,
+          .hero-buttons-group .btn-outline-red {
+            flex: 1 1 calc(50% - 6px) !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 10px 12px !important;
+            font-size: 0.86rem !important;
+          }
+          .hero-highlights {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 8px !important;
+          }
+          .hero-highlights > div > div:first-child {
+            font-size: 1.35rem !important;
+          }
+          .hero-highlights > div > div:last-child {
+            font-size: 0.7rem !important;
+          }
+        }
+        @media (max-width: 380px) {
           .hero-highlights {
             grid-template-columns: 1fr !important;
-            gap: 12px !important;
+            gap: 10px !important;
           }
         }
       `}</style>

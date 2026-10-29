@@ -181,7 +181,7 @@ export default function ContactPage({ onOpenRfq }) {
                     Fill out this direct dispatch inquiry form or request our commercial price list.
                   </p>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="contact-form-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Your Name *</label>
                       <input
@@ -207,7 +207,7 @@ export default function ContactPage({ onOpenRfq }) {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="contact-form-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Email Address *</label>
                       <input
@@ -337,6 +337,15 @@ export default function ContactPage({ onOpenRfq }) {
           @media (max-width: 900px) {
             .contact-layout-grid {
               grid-template-columns: 1fr !important;
+            }
+          }
+          @media (max-width: 576px) {
+            .contact-form-2col {
+              grid-template-columns: 1fr !important;
+              gap: 10px !important;
+            }
+            .contact-layout-grid > div:last-child {
+              padding: 20px 16px !important;
             }
           }
         `}</style>

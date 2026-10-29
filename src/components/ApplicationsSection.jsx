@@ -117,6 +117,14 @@ export default function ApplicationsSection({ onSelectApplicationForRfq }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .apps-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

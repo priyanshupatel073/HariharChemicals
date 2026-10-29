@@ -86,7 +86,7 @@ export default function Navbar({ onOpenRfq }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#E2E8F0', whiteSpace: 'nowrap' }}>
               <ShieldCheck size={13} color="var(--brand-red)" />
-              <span><strong style={{ color: '#FFFFFF' }}>ISO 9001:2015</strong> Certified Chemical Facility</span>
+              <span><strong style={{ color: '#FFFFFF' }}>ISO 9001:2015</strong><span className="topbar-subtext"> Certified Chemical Facility</span></span>
             </span>
             <span style={{ color: 'rgba(255, 255, 255, 0.2)' }} className="d-none-sm">•</span>
             <span style={{ alignItems: 'center', gap: '5px', whiteSpace: 'nowrap' }} className="d-none-sm">
@@ -153,6 +153,7 @@ export default function Navbar({ onOpenRfq }) {
             <img
               src="/images/harihar_full_logo.png"
               alt="Harihar Chemicals"
+              className="navbar-brand-logo"
               style={{
                 height: '44px',
                 width: 'auto',
@@ -356,7 +357,7 @@ export default function Navbar({ onOpenRfq }) {
             {/* Primary RFQ Button (Sleek Minimalist Pill) */}
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary navbar-rfq-btn"
               onClick={() => onOpenRfq()}
               style={{
                 display: 'flex',
@@ -378,19 +379,22 @@ export default function Navbar({ onOpenRfq }) {
             {/* Mobile Hamburger Toggle */}
             <button
               type="button"
-              className="d-mobile-only"
+              className="d-mobile-only mobile-menu-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               style={{
                 background: 'none',
                 border: 'none',
                 color: 'var(--brand-grey-dark)',
                 cursor: 'pointer',
-                padding: '4px',
+                padding: '8px',
+                minWidth: '40px',
+                minHeight: '40px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
-                marginLeft: '4px'
+                marginLeft: '4px',
+                borderRadius: '6px'
               }}
               aria-label="Toggle Navigation Menu"
             >
@@ -497,6 +501,28 @@ export default function Navbar({ onOpenRfq }) {
         }
         @media (max-width: 768px) {
           .d-none-sm { display: none !important; }
+          .navbar-brand-logo {
+            height: 38px !important;
+          }
+        }
+        @media (max-width: 520px) {
+          .topbar-subtext {
+            display: none !important;
+          }
+        }
+        @media (max-width: 440px) {
+          .navbar-brand-logo {
+            height: 32px !important;
+          }
+          .navbar-rfq-btn {
+            padding: 6px 10px !important;
+            font-size: 0.78rem !important;
+            height: 34px !important;
+          }
+          .navbar-rfq-btn svg {
+            width: 12px !important;
+            height: 12px !important;
+          }
         }
       `}</style>
     </header>

@@ -88,6 +88,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
 
   return (
     <div
+      className="rfq-modal-overlay"
       style={{
         position: 'fixed',
         top: 0,
@@ -105,6 +106,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
       onClick={onClose}
     >
       <div
+        className="rfq-modal-container"
         style={{
           backgroundColor: '#FFFFFF',
           borderRadius: 'var(--radius-lg)',
@@ -139,6 +141,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
 
         {/* Modal Top Crimson Banner */}
         <div
+          className="rfq-modal-banner"
           style={{
             background: 'linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 100%)',
             color: '#FFFFFF',
@@ -181,7 +184,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
         </div>
 
         {/* Modal Body */}
-        <div style={{ padding: '32px' }}>
+        <div className="rfq-modal-body" style={{ padding: '32px' }}>
           {!submitted ? (
             <form onSubmit={step === 1 ? (e) => { e.preventDefault(); setStep(2); } : handleSubmit}>
               {/* STEP 1: Chemical & Technical Parameters */}
@@ -219,7 +222,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                   </div>
 
                   {/* Volume & Packaging */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="rfq-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Required Batch Volume:</label>
                       <select
@@ -272,7 +275,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                   </div>
 
                   {/* Step 1 Actions */}
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '24px' }}>
+                  <div className="rfq-action-buttons" style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '24px' }}>
                     <button
                       type="submit"
                       className="btn btn-primary"
@@ -292,7 +295,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                     Step 2 of 2: Buyer Contact &amp; Dispatch Logistics
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="rfq-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Full Name *</label>
                       <input
@@ -320,7 +323,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="rfq-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Business Email *</label>
                       <input
@@ -348,7 +351,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="rfq-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
                       <label className="form-label">Destination Country</label>
                       <input
@@ -390,7 +393,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                   </div>
 
                   {/* Step 2 Actions */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '24px' }}>
+                  <div className="rfq-action-buttons" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '24px' }}>
                     <button
                       type="button"
                       className="btn btn-secondary"
@@ -531,6 +534,35 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
           )}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 576px) {
+          .rfq-modal-overlay {
+            padding: 8px !important;
+          }
+          .rfq-modal-banner {
+            padding: 20px 16px !important;
+          }
+          .rfq-modal-banner h2 {
+            font-size: 1.25rem !important;
+          }
+          .rfq-modal-body {
+            padding: 20px 16px !important;
+          }
+          .rfq-grid-2col {
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+          .rfq-action-buttons {
+            flex-direction: column-reverse !important;
+            gap: 10px !important;
+          }
+          .rfq-action-buttons button {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

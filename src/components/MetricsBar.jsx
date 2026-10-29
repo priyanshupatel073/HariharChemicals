@@ -14,6 +14,7 @@ export default function MetricsBar() {
 
   return (
     <section
+      className="metrics-section"
       style={{
         backgroundColor: 'var(--bg-dark)',
         color: '#FFFFFF',
@@ -36,6 +37,7 @@ export default function MetricsBar() {
           {COMPANY_INFO.metrics.map((m, idx) => (
             <div
               key={m.label}
+              className="metric-card"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -56,23 +58,48 @@ export default function MetricsBar() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.02em', fontFamily: 'var(--font-sans)' }}>
+                <div className="metric-val" style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.02em', fontFamily: 'var(--font-sans)' }}>
                   {m.value}{m.suffix}
                 </div>
                 {metricIcons[idx % metricIcons.length]}
               </div>
 
-              <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#E2E8F0' }}>
+              <div className="metric-lbl" style={{ fontSize: '0.92rem', fontWeight: 700, color: '#E2E8F0' }}>
                 {m.label}
               </div>
 
-              <div style={{ fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.45 }}>
+              <div className="metric-sub" style={{ fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.45 }}>
                 {m.subtext}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 576px) {
+          .metrics-section {
+            padding: 36px 0 !important;
+          }
+          .metrics-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+          }
+          .metric-card {
+            padding: 12px 10px !important;
+            gap: 4px !important;
+          }
+          .metric-val {
+            font-size: 1.5rem !important;
+          }
+          .metric-lbl {
+            font-size: 0.82rem !important;
+          }
+          .metric-sub {
+            font-size: 0.7rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

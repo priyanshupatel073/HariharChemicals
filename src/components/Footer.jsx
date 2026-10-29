@@ -31,6 +31,7 @@ export default function Footer({ onOpenRfq }) {
     >
       {/* Upper Industrial Action Banner */}
       <div
+        className="footer-cta-banner"
         style={{
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           padding: '48px 0',
@@ -59,7 +60,7 @@ export default function Footer({ onOpenRfq }) {
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <div className="footer-cta-buttons" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <button
                 type="button"
                 className="btn btn-primary"
@@ -84,7 +85,7 @@ export default function Footer({ onOpenRfq }) {
       </div>
 
       {/* Main Footer Links & Directory */}
-      <div className="container" style={{ padding: '64px 28px 48px 28px' }}>
+      <div className="container footer-main-container" style={{ padding: '64px 28px 48px 28px' }}>
         <div
           style={{
             display: 'grid',
@@ -299,7 +300,7 @@ export default function Footer({ onOpenRfq }) {
           color: '#64748B'
         }}
       >
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+        <div className="container footer-legal-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           <div>
             © {new Date().getFullYear()} <strong>Harihar Chemicals Industries</strong>. All Rights Reserved. ISO 9001:2015 Certified.
           </div>
@@ -325,6 +326,25 @@ export default function Footer({ onOpenRfq }) {
           .footer-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
+          }
+          .footer-cta-banner {
+            padding: 32px 0 !important;
+          }
+          .footer-cta-buttons {
+            width: 100% !important;
+            flex-direction: column !important;
+          }
+          .footer-cta-buttons .btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .footer-main-container {
+            padding: 36px 16px 28px 16px !important;
+          }
+          .footer-legal-container {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
           }
         }
       `}</style>

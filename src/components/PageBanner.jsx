@@ -5,6 +5,7 @@ import { ChevronRight, Sparkles } from 'lucide-react';
 export default function PageBanner({ title, subtitle, tag, onOpenRfq }) {
   return (
     <div
+      className="page-banner-container"
       style={{
         backgroundColor: 'var(--brand-grey-dark)',
         color: '#FFFFFF',
@@ -63,6 +64,20 @@ export default function PageBanner({ title, subtitle, tag, onOpenRfq }) {
           )}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 576px) {
+          .page-banner-container {
+            padding: 38px 0 42px 0 !important;
+          }
+          .page-banner-container h1 {
+            font-size: 1.85rem !important;
+          }
+          .page-banner-container p {
+            font-size: 0.95rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

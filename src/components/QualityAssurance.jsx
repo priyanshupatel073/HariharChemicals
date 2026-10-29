@@ -240,17 +240,18 @@ export default function QualityAssurance() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '24px'
+              padding: '16px'
             }}
             onClick={() => setActiveCertModal(null)}
           >
             <div
+              className="cert-lightbox-modal"
               style={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: 'var(--radius-lg)',
                 maxWidth: '680px',
                 width: '100%',
-                maxHeight: '90vh',
+                maxHeight: '92vh',
                 overflowY: 'auto',
                 padding: '28px',
                 position: 'relative',
@@ -327,6 +328,17 @@ export default function QualityAssurance() {
           </div>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .certs-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .cert-lightbox-modal {
+            padding: 20px 14px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -156,6 +156,11 @@ export default function HomePage({ onOpenRfq }) {
               padding: 32px 24px !important;
             }
           }
+          @media (max-width: 576px) {
+            .home-contact-card {
+              padding: 24px 16px !important;
+            }
+          }
         `}</style>
       </section>
     </div>

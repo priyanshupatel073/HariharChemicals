@@ -256,6 +256,11 @@ export default function AboutPage({ onOpenRfq }) {
               grid-template-columns: 1fr !important;
             }
           }
+          @media (max-width: 576px) {
+            .about-story-grid > div:last-child {
+              min-height: 260px !important;
+            }
+          }
         `}</style>
       </section>
 

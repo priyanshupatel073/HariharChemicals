@@ -95,6 +95,11 @@ export default function QualityPage({ onOpenRfq }) {
               padding: 24px !important;
             }
           }
+          @media (max-width: 576px) {
+            .quality-guarantee-grid {
+              padding: 20px 16px !important;
+            }
+          }
         `}</style>
       </section>
     </div>

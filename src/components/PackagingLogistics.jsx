@@ -101,7 +101,7 @@ export default function PackagingLogistics({ onOpenRfq }) {
               Packaging has kept pace with our evolving international markets. Equipped with a dedicated inspection team, all containers are fitted with tamper-evident seals, moisture-barrier poly-liners, and export container palletization.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
+            <div className="packaging-specs-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
               <div style={{ backgroundColor: 'var(--bg-secondary)', padding: '14px', borderRadius: '8px', border: '1px solid var(--brand-grey-light)' }}>
                 <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--brand-grey-dark)' }}>Sample to FCL Lots</div>
                 <div style={{ fontSize: '0.84rem', color: 'var(--brand-grey-slate)' }}>From 1 kg trials to 20+ MT full container loads</div>
@@ -126,6 +126,7 @@ export default function PackagingLogistics({ onOpenRfq }) {
 
         {/* 4 Packaging Cards */}
         <div
+          className="packaging-cards-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -170,6 +171,17 @@ export default function PackagingLogistics({ onOpenRfq }) {
       <style>{`
         @media (max-width: 900px) {
           .packaging-hero-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 576px) {
+          .packaging-hero-grid {
+            padding: 20px 16px !important;
+          }
+          .packaging-specs-2col {
+            grid-template-columns: 1fr !important;
+          }
+          .packaging-cards-grid {
             grid-template-columns: 1fr !important;
           }
         }

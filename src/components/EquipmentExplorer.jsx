@@ -310,6 +310,7 @@ export default function EquipmentExplorer() {
 
         {/* Category Tabs & Interactive Explorer */}
         <div
+          className="equipment-tabs-wrap"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -348,6 +349,7 @@ export default function EquipmentExplorer() {
 
         {/* Current Category Overview Banner */}
         <div
+          className="equipment-banner"
           style={{
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: 'var(--radius-md)',
@@ -370,7 +372,7 @@ export default function EquipmentExplorer() {
             </p>
           </div>
 
-          <div style={{ position: 'relative', minWidth: '240px' }}>
+          <div className="equipment-search-box" style={{ position: 'relative', minWidth: '240px' }}>
             <Search size={15} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--brand-grey-medium)' }} />
             <input
               type="text"
@@ -443,6 +445,24 @@ export default function EquipmentExplorer() {
         @media (max-width: 840px) {
           .plant-montage-grid {
             grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .equipment-items-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .plant-montage-grid > div {
+            height: 240px !important;
+          }
+          .equipment-banner {
+            padding: 18px 16px !important;
+          }
+          .equipment-search-box {
+            min-width: 100% !important;
+          }
+          .equipment-tabs-wrap button {
+            padding: 8px 12px !important;
+            font-size: 0.8rem !important;
           }
         }
       `}</style>

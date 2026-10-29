@@ -377,7 +377,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
                   ISO Fastness Ratings (Scale 1–8 for Light, 1–5 for Wash/Chemical)
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', textAlign: 'center' }}>
+                <div className="fastness-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', textAlign: 'center' }}>
                   <div style={{ backgroundColor: 'var(--bg-tertiary)', padding: '10px 4px', borderRadius: '6px' }}>
                     <div style={{ fontSize: '0.7rem', color: 'var(--brand-grey-medium)', fontWeight: 600 }}>LIGHT</div>
                     <div style={{ fontSize: '1.15rem', fontWeight: 900, color: 'var(--brand-red)', marginTop: '2px' }}>
@@ -417,7 +417,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
             </div>
 
             {/* Bottom Actions */}
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <div className="shade-card-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
               <button
                 type="button"
                 className="btn btn-primary"
@@ -426,7 +426,7 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
                   cas: `${currentNaphthol.cas} / ${currentBase.cas}`,
                   code: `${currentNaphthol.code} + ${currentBase.code}`
                 })}
-                style={{ flex: 1 }}
+                style={{ flex: 1, minWidth: '200px' }}
               >
                 <Sparkles size={16} />
                 <span>Request Sample Recipe</span>
@@ -453,6 +453,28 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
           .shade-card-grid {
             grid-template-columns: 1fr !important;
             padding: 24px !important;
+          }
+        }
+        @media (max-width: 576px) {
+          .shade-card-grid {
+            padding: 16px 12px !important;
+          }
+          .fastness-grid {
+            gap: 4px !important;
+          }
+          .fastness-grid > div {
+            padding: 8px 2px !important;
+          }
+          .fastness-grid > div > div:first-child {
+            font-size: 0.6rem !important;
+          }
+          .fastness-grid > div > div:last-child {
+            font-size: 0.95rem !important;
+          }
+          .shade-card-actions a {
+            flex: 1;
+            text-align: center;
+            justify-content: center;
           }
         }
       `}</style>

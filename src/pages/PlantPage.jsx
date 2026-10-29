@@ -79,6 +79,11 @@ export default function PlantPage({ onOpenRfq }) {
               padding: 24px !important;
             }
           }
+          @media (max-width: 576px) {
+            .plant-safety-grid {
+              padding: 20px 16px !important;
+            }
+          }
         `}</style>
       </section>
     </div>
