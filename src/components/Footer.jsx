@@ -132,7 +132,7 @@ export default function Footer({ onOpenRfq }) {
                   <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Impex</strong>
                 </li>
                 <li style={{ color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Astitva Lifesciences</strong>
+                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Astitva Lifecare Sciences</strong>
                 </li>
               </ul>
             </div>

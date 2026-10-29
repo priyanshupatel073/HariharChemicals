@@ -36,10 +36,10 @@ export const COMPANY_INFO = {
       description: "Direct export operations delivering to clients across Asia, Middle East, Europe, and Americas."
     },
     {
-      name: "Astitva Lifesciences",
-      role: "Life Sciences & Advanced Healthcare Chemical Solutions",
+      name: "Astitva Lifecare Sciences Pvt Ltd",
+      role: "High-Quality Chemical & Life Science Trading",
       location: "Domestic & International Markets",
-      description: "Research, formulation, and commercial distribution of advanced life science raw materials and specialty ingredients."
+      description: "Astitva Lifecare Sciences Pvt Ltd is a newly established company in 2026, engaged in the trading of high-quality chemical and life science products."
     }
   ],
   registeredAddress: "Plot No.: J-5248, Near Meghmani Industries, Khwaja Chokdi, G.I.D.C., Ankleshwar - 393 002. Dist. Bharuch, Gujarat (INDIA)",
