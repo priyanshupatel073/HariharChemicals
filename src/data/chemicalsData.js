@@ -24,16 +24,22 @@ export const COMPANY_INFO = {
       description: "Specialized in synthesis of Naphthol derivatives and diazotisation of Fast Colour Bases."
     },
     {
+      name: "Harihar Pharma Chem",
+      role: "Pharmaceutical Intermediates & Specialty Fine Chemicals",
+      location: "Ankleshwar Industrial Zone, Gujarat",
+      description: "Dedicated to high-purity pharmaceutical intermediates, active compound building blocks, and specialty chemical synthesis."
+    },
+    {
       name: "Harihar Impex",
       role: "International Export & Global Logistics Wing",
       location: "India & Global Ports",
       description: "Direct export operations delivering to clients across Asia, Middle East, Europe, and Americas."
     },
     {
-      name: "Austin Impex",
-      role: "Specialty Chemicals & Dyestuff Intermediates Trading",
-      location: "Domestic & Regional Hubs",
-      description: "Sourcing and distribution of raw chemicals and customized formulation additives."
+      name: "Astitva Lifesciences",
+      role: "Life Sciences & Advanced Healthcare Chemical Solutions",
+      location: "Domestic & International Markets",
+      description: "Research, formulation, and commercial distribution of advanced life science raw materials and specialty ingredients."
     }
   ],
   registeredAddress: "Plot No.: J-5248, Near Meghmani Industries, Khwaja Chokdi, G.I.D.C., Ankleshwar - 393 002. Dist. Bharuch, Gujarat (INDIA)",

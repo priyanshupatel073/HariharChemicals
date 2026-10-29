@@ -123,13 +123,16 @@ export default function Footer({ onOpenRfq }) {
               </div>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '5px', fontSize: '0.84rem' }}>
                 <li style={{ color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Chemicals</strong> (Ankleshwar Synthesis)
+                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Chemicals</strong>
                 </li>
                 <li style={{ color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Impex</strong> (Global Export Logistics)
+                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Pharma Chem</strong>
                 </li>
                 <li style={{ color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Austin Impex</strong> (Specialty Trading)
+                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Harihar Impex</strong>
+                </li>
+                <li style={{ color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--brand-red)' }}>▸</span> <strong>Astitva Lifesciences</strong>
                 </li>
               </ul>
             </div>

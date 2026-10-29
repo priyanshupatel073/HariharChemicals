@@ -388,7 +388,7 @@ export default function Hero({ onOpenRfq }) {
                   Export Logistics
                 </div>
                 <div style={{ fontSize: '0.86rem', fontWeight: 800, color: 'var(--brand-grey-dark)', marginTop: '2px' }}>
-                  Harihar Impex &amp; Austin Impex
+                  Harihar Impex &amp; Global Network
                 </div>
               </div>
             </div>

@@ -2,14 +2,14 @@ import React from 'react';
 import PageBanner from '../components/PageBanner';
 import MetricsBar from '../components/MetricsBar';
 import { COMPANY_INFO } from '../data/chemicalsData';
-import { 
-  Building2, 
-  Target, 
-  Eye, 
-  HeartHandshake, 
-  Award, 
-  ShieldCheck, 
-  Globe2, 
+import {
+  Building2,
+  Target,
+  Eye,
+  HeartHandshake,
+  Award,
+  ShieldCheck,
+  Globe2,
   Sparkles,
   Phone,
   Mail,
@@ -268,10 +268,7 @@ export default function AboutPage({ onOpenRfq }) {
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '80px 0', borderTop: '1px solid var(--brand-grey-light)' }}>
         <div className="container">
           <div className="section-header" style={{ marginBottom: '40px' }}>
-            <span className="section-tag">
-              <Globe2 size={14} />
-              <span>Corporate Ecosystem</span>
-            </span>
+
             <h2 className="section-title">
               Harihar Group Companies
             </h2>
@@ -283,8 +280,8 @@ export default function AboutPage({ onOpenRfq }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '28px'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '24px'
             }}
           >
             {COMPANY_INFO.groupCompanies.map((comp) => (
@@ -292,32 +289,27 @@ export default function AboutPage({ onOpenRfq }) {
                 key={comp.name}
                 className="card-clean"
                 style={{
-                  padding: '32px',
+                  padding: '28px',
                   backgroundColor: '#FFFFFF',
                   border: '1px solid var(--brand-grey-light)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between'
+                  justifyContent: 'flex-start'
                 }}
               >
                 <div>
                   <span className="cas-tag" style={{ color: 'var(--brand-red)', fontWeight: 700, marginBottom: '12px' }}>
                     {comp.location}
                   </span>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--brand-grey-dark)', marginTop: '8px', marginBottom: '6px' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--brand-grey-dark)', marginTop: '8px', marginBottom: '6px' }}>
                     {comp.name}
                   </h3>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--brand-red)', marginBottom: '14px' }}>
+                  <div style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--brand-red)', marginBottom: '12px' }}>
                     {comp.role}
                   </div>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--brand-grey-slate)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--brand-grey-slate)', lineHeight: 1.6, margin: 0 }}>
                     {comp.description}
                   </p>
-                </div>
-
-                <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px dashed var(--brand-grey-light)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)' }}>Corporate Entity</span>
-                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--brand-grey-dark)' }}>Harihar Group</span>
                 </div>
               </div>
             ))}
