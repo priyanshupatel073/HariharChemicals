@@ -6,7 +6,9 @@ node_modules
 # Testing & screenshots
 /coverage
 *.png
+!public/**
 take_screenshots.py
+verify_placeholders.py
 
 # Production build
 /dist

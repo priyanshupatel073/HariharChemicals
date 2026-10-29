@@ -260,68 +260,48 @@ export default function EquipmentExplorer() {
             </div>
           </div>
 
+          {/* Real Photo: Analytical Testing IR Dyeing Machine */}
           <div
             style={{
               borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
               position: 'relative',
-              boxShadow: 'var(--shadow-sm)',
-              border: '2px dashed var(--brand-grey-light)',
-              backgroundColor: 'var(--bg-secondary)',
+              boxShadow: 'var(--shadow-md)',
+              border: '1px solid var(--brand-grey-light)',
               height: '320px',
+              backgroundColor: '#F8FAFC',
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              padding: '24px'
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            <div
+            <img
+              src="/images/cropped/ir_dyeing_machine.png"
+              alt="Automatic Infra-Red Dyeing & Color Matching Machine at Harihar Chemicals"
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flex: 1,
-                color: 'var(--brand-grey-medium)',
-                gap: '8px'
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                padding: '16px 20px 64px 20px',
+                display: 'block'
               }}
-            >
-              <div
-                style={{
-                  width: '52px',
-                  height: '52px',
-                  borderRadius: '12px',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--brand-grey-light)',
-                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--brand-grey-medium)'
-                }}
-              >
-                <Camera size={24} />
-              </div>
-              <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--brand-grey-slate)' }}>
-                Analytical Testing &amp; QC Lab Photo Space
-              </span>
-              <span style={{ fontSize: '0.76rem', color: 'var(--brand-grey-medium)' }}>
-                Space reserved for IR dyeing &amp; purity analysis lab photography
-              </span>
-            </div>
-
+            />
+            {/* Subtle Gradient Overlay & Technical Label */}
             <div
               style={{
-                padding: '14px 18px',
-                borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: '16px 20px',
+                background: 'linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.75) 30%, rgba(15, 23, 42, 0.95) 100%)',
                 color: '#FFFFFF'
               }}
             >
-              <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171', letterSpacing: '0.04em', marginBottom: '2px' }}>
                 Analytical Testing
               </div>
-              <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.3 }}>
                 Automatic Infra-Red Dyeing &amp; TLC Purity Development Suite
               </div>
             </div>
