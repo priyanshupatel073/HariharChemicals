@@ -101,7 +101,7 @@ export default function HomePage({ onOpenRfq }) {
                 </button>
 
                 <a
-                  href="https://wa.me/919427103220?text=Hello%20Harihar%20Chemicals,%20I%20am%20interested%20in%20your%20Naphthols%20and%20Fast%20Bases."
+                  href="https://wa.me/917041779000?text=Hello%20Harihar%20Chemicals,%20I%20am%20interested%20in%20your%20Naphthols%20and%20Fast%20Bases."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn"
@@ -135,14 +135,14 @@ export default function HomePage({ onOpenRfq }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <Phone size={18} color="var(--brand-red)" style={{ flexShrink: 0 }} />
                 <div style={{ fontSize: '0.88rem', color: '#E2E8F0' }}>
-                  <strong>Director Mobile:</strong> +91 94271 03220
+                  <strong>Director Mobile:</strong> +91 70417 79000
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <Mail size={18} color="var(--brand-red)" style={{ flexShrink: 0 }} />
                 <div style={{ fontSize: '0.88rem', color: '#E2E8F0' }}>
-                  <strong>Email:</strong> hariharchem3@yahoo.com
+                  <strong>Email:</strong> hariharchem3@gmail.com
                 </div>
               </div>
             </div>

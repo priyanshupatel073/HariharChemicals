@@ -77,7 +77,7 @@ export default function Footer({ onOpenRfq }) {
                 style={{ fontWeight: 600 }}
               >
                 <Phone size={16} color="var(--brand-red)" />
-                <span>Call Plant: +91 94271 03220</span>
+                <span>Call Plant: +91 70417 79000</span>
               </a>
             </div>
           </div>

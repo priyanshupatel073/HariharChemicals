@@ -98,12 +98,12 @@ export default function App() {
 
         {/* Floating WhatsApp Quick Action Button */}
         <a
-          href="https://wa.me/919427103220?text=Hello%20Harihar%20Chemicals,%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20Naphthols%20and%20Fast%20Bases."
+          href="https://wa.me/917041779000?text=Hello%20Harihar%20Chemicals,%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20Naphthols%20and%20Fast%20Bases."
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float"
           aria-label="Direct WhatsApp with Director"
-          title="Direct WhatsApp with Director (+91 94271 03220)"
+          title="Direct WhatsApp with Director (+91 70417 79000)"
         >
           <WhatsAppIcon size={30} color="#FFFFFF" />
         </a>

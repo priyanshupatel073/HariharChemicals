@@ -31,7 +31,7 @@ export default function ContactPage({ onOpenRfq }) {
     setSubmitted(true);
   };
 
-  const waUrl = `https://wa.me/919427103220?text=${encodeURIComponent(`Hello Harihar Chemicals, I am contacting you from the website regarding: ${formState.subject}`)}`;
+  const waUrl = `https://wa.me/917041779000?text=${encodeURIComponent(`Hello Harihar Chemicals, I am contacting you from the website regarding: ${formState.subject}`)}`;
 
   return (
     <div>
@@ -88,7 +88,7 @@ export default function ContactPage({ onOpenRfq }) {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.9rem' }}>
                   <a
-                    href="tel:+919427103220"
+                    href="tel:+917041779000"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -99,11 +99,11 @@ export default function ContactPage({ onOpenRfq }) {
                     }}
                   >
                     <Phone size={16} color="var(--brand-red)" />
-                    <span>+91 94271 03220 (Mobile / WhatsApp)</span>
+                    <span>+91 70417 79000 (Mobile / WhatsApp)</span>
                   </a>
 
                   <a
-                    href="https://wa.me/919427103220"
+                    href="https://wa.me/917041779000"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

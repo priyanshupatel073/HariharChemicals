@@ -84,7 +84,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
     `Notes: ${formData.message || 'Please provide quotation, COA, and dispatch lead time.'}`
   );
 
-  const waUrl = `https://wa.me/919427103220?text=${waMessage}`;
+  const waUrl = `https://wa.me/917041779000?text=${waMessage}`;
 
   return (
     <div
@@ -481,11 +481,11 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                     }}
                   >
                     <WhatsAppIcon size={20} color="#FFFFFF" />
-                    <span>Send this RFQ via WhatsApp to Director (+91 94271 03220)</span>
+                    <span>Send this RFQ via WhatsApp to Director (+91 70417 79000)</span>
                   </a>
 
                   <a
-                    href={`mailto:hariharchem3@yahoo.com?subject=${encodeURIComponent(`RFQ [${rfqRefNumber}] - ${formData.chemical} - ${formData.companyName}`)}&body=${waMessage}`}
+                    href={`mailto:hariharchem3@gmail.com?subject=${encodeURIComponent(`RFQ [${rfqRefNumber}] - ${formData.chemical} - ${formData.companyName}`)}&body=${waMessage}`}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -502,7 +502,7 @@ export default function RfqModal({ isOpen, onClose, preselectedProduct }) {
                     }}
                   >
                     <Mail size={16} color="var(--brand-red)" />
-                    <span>Email Direct to Plant (hariharchem3@yahoo.com)</span>
+                    <span>Email Direct to Plant (hariharchem3@gmail.com)</span>
                   </a>
                 </div>
               </div>
