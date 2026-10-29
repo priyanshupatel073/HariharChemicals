@@ -39,10 +39,10 @@ export const COMPANY_INFO = {
   registeredAddress: "Plot No.: J-5248, Near Meghmani Industries, Khwaja Chokdi, G.I.D.C., Ankleshwar - 393 002. Dist. Bharuch, Gujarat (INDIA)",
   director: "Mr. Prakash C. Rawal",
   contactPersonTitle: "Director",
-  phoneMobile: "+91 94271 03220",
-  phoneLandlines: ["+91-2646-250220", "+91-2646-224220"],
+  phoneMobile: "+91 701779000",
+  phoneLandlines: ["+91-9714503220"],
   tollFree: "1800 233 3220",
-  emails: ["hariharchem3@yahoo.com", "hariharchem3@gmail.com"],
+  emails: ["hariharchem3@gmail.com", "hariharchem3@yahoo.com"],
   website: "www.hariharchemicals.com",
   certifications: [
     {

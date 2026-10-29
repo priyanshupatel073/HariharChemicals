@@ -47,43 +47,55 @@ export default function PackagingLogistics({ onOpenRfq }) {
           }}
           className="packaging-hero-grid"
         >
-          {/* Packaging Photo Space - Reserved for Upload */}
+          {/* Authentic Palletized Export Packaging Photo */}
           <div
             style={{
+              position: 'relative',
               borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
-              border: '2px dashed var(--brand-grey-light)',
-              backgroundColor: '#FFFFFF',
-              boxShadow: 'var(--shadow-sm)',
-              minHeight: '280px',
+              border: '1px solid var(--brand-grey-light)',
+              backgroundColor: '#F8FAFC',
+              boxShadow: 'var(--shadow-md)',
+              minHeight: '320px',
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: '28px',
-              textAlign: 'center'
+              justifyContent: 'center'
             }}
           >
+            <img
+              src="/images/precipitated_silica_pallet.jpg"
+              alt="Palletized Export Chemical Bags with Moisture-Barrier Shrink Wrap"
+              loading="lazy"
+              style={{
+                width: '100%',
+                height: '100%',
+                maxHeight: '380px',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+            />
             <div
               style={{
-                width: '54px',
-                height: '54px',
-                borderRadius: '14px',
-                backgroundColor: 'var(--brand-red-light)',
+                position: 'absolute',
+                bottom: '12px',
+                left: '12px',
+                right: '12px',
+                backgroundColor: 'rgba(15, 23, 42, 0.78)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                color: '#FFFFFF',
+                fontSize: '0.78rem',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--brand-red)',
-                marginBottom: '12px'
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '6px'
               }}
             >
-              <Package size={26} />
-            </div>
-            <div style={{ fontSize: '0.94rem', fontWeight: 700, color: 'var(--brand-grey-dark)' }}>
-              Export Packaging Photo Space
-            </div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)', marginTop: '4px', maxWidth: '300px' }}>
-              Reserved for 1kg Pouch, 25kg Bag, 25kg Fiber Drum &amp; 100kg HDPE Drum photography
+              <span style={{ fontWeight: 600 }}>Palletized Export Packaging • Shrink-Wrapped</span>
+              <span style={{ fontSize: '0.72rem', color: '#FCA5A5', fontWeight: 700 }}>Moisture Barrier Protected</span>
             </div>
           </div>
 
