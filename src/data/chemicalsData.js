@@ -48,7 +48,7 @@ export const COMPANY_INFO = {
   phoneMobile: "+91 70417 79000",
   phoneLandlines: ["+91-9714503220"],
   tollFree: "1800 233 3220",
-  emails: ["hariharchem3@gmail.com"],
+  emails: ["hariharchem3@gmail.com", "akashrawal@hariharchemicals.com"],
   website: "www.hariharchemicals.com",
   certifications: [
     {

@@ -275,11 +275,21 @@ export default function Footer({ onOpenRfq }) {
                 </span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Mail size={17} color="var(--brand-red)" style={{ flexShrink: 0 }} />
-                <a href={`mailto:${COMPANY_INFO.emails[0]}`} style={{ color: '#CBD5E1', textDecoration: 'none' }}>
-                  {COMPANY_INFO.emails.join(' | ')}
-                </a>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                <Mail size={17} color="var(--brand-red)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  {COMPANY_INFO.emails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      style={{ color: '#CBD5E1', textDecoration: 'none', transition: 'color 0.15s ease' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#FFFFFF'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#CBD5E1'}
+                    >
+                      {email}
+                    </a>
+                  ))}
+                </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
