@@ -1,14 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  FileDown, 
-  ShieldCheck, 
-  Award, 
-  Layers, 
-  CheckCircle2, 
-  Activity, 
+import {
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
   Download,
   Building2
 } from 'lucide-react';
@@ -24,371 +19,369 @@ export default function Hero({ onOpenRfq }) {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
-        backgroundImage: "url('/images/hero_factory_bg_web.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: '68% 25%',
-        backgroundRepeat: 'no-repeat',
         overflow: 'hidden',
         borderBottom: '1px solid var(--brand-grey-light)',
-        padding: '50px 0 50px 0'
+        padding: '60px 0 70px 0'
       }}
     >
-      {/* White Color Fade from Left to Right - Pure white behind text on left, fading smoothly so the HARIHAR CHEMICALS company sign & entrance on right are 100% visible, sharp & clear with zero text overlap */}
-      <div
-        className="hero-overlay-fade"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 30%, rgba(255, 255, 255, 0.88) 36%, rgba(255, 255, 255, 0.18) 42%, rgba(255, 255, 255, 0) 47%)',
-          pointerEvents: 'none',
-          zIndex: 1
-        }}
-      />
-
-      {/* Subtle Crimson Radial Ambient Glow on left */}
+      {/* Subtle Crimson Radial Ambient Glows for Modern Depth */}
       <div
         style={{
           position: 'absolute',
           top: '-15%',
-          left: '2%',
+          left: '5%',
+          width: '550px',
+          height: '550px',
+          background: 'radial-gradient(circle, rgba(211, 47, 47, 0.06) 0%, rgba(255, 255, 255, 0) 70%)',
+          pointerEvents: 'none',
+          zIndex: 0
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-10%',
+          right: '5%',
           width: '500px',
           height: '500px',
-          background: 'radial-gradient(circle, rgba(211, 47, 47, 0.08) 0%, rgba(255, 255, 255, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(15, 23, 42, 0.04) 0%, rgba(255, 255, 255, 0) 70%)',
           pointerEvents: 'none',
-          zIndex: 1
+          zIndex: 0
         }}
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        {/* Left-Aligned Industrial Content: Confined to maxWidth: 510px to guarantee ZERO text overlap with the company name on the right */}
-        <div style={{ maxWidth: '510px' }}>
-          {/* Shifted Facility Location & Operational Status Badges */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '8px',
-              alignItems: 'center',
-              marginBottom: '20px'
-            }}
-          >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1.15fr 0.85fr',
+            gap: '52px',
+            alignItems: 'center'
+          }}
+          className="hero-grid"
+        >
+          {/* Left Column: Industrial Typography & Action CTAs */}
+          <div>
+            {/* High-Precision Badge */}
             <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
-                padding: '5px 13px',
+                gap: '10px',
+                padding: '6px 16px',
                 borderRadius: 'var(--radius-full)',
                 backgroundColor: 'var(--brand-red-light)',
-                border: '1px solid var(--brand-red-border)'
+                border: '1px solid var(--brand-red-border)',
+                marginBottom: '22px'
               }}
             >
-              <Building2 size={13} color="var(--brand-red)" />
               <span
                 style={{
-                  fontSize: '0.78rem',
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--brand-red)',
+                  display: 'inline-block',
+                  boxShadow: '0 0 10px var(--brand-red)'
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '0.82rem',
                   fontWeight: 800,
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                   color: 'var(--brand-red-dark)'
                 }}
               >
-                Plot J-5248 • G.I.D.C. Ankleshwar
+                G.I.D.C. ANKLESHWAR • ISO 9001:2015 CERTIFIED
               </span>
             </div>
 
-            <div
+            {/* Main Headline */}
+            <h1
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '5px 13px',
-                borderRadius: 'var(--radius-full)',
-                backgroundColor: 'rgba(211, 47, 47, 0.08)',
-                border: '1px solid rgba(211, 47, 47, 0.22)',
-                fontSize: '0.76rem',
-                fontWeight: 800,
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-                color: 'var(--brand-red)'
+                fontSize: 'clamp(2.4rem, 4.4vw, 3.8rem)',
+                fontWeight: 900,
+                lineHeight: 1.14,
+                letterSpacing: '-0.03em',
+                color: 'var(--brand-grey-dark)',
+                marginBottom: '20px'
               }}
             >
-              ● Active Synthesis Units
-            </div>
+              Precision <span style={{ color: 'var(--brand-red)' }}>Naphthols</span>, Fast Bases &amp; Azoic Colorants.
+            </h1>
 
-            <div
+            {/* Sub-Headline */}
+            <p
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '5px 13px',
-                borderRadius: 'var(--radius-full)',
-                backgroundColor: 'rgba(15, 23, 42, 0.04)',
-                border: '1px solid var(--brand-grey-light)',
-                fontSize: '0.76rem',
-                fontWeight: 700,
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-                color: 'var(--brand-grey-slate)'
+                fontSize: 'clamp(1.05rem, 1.4vw, 1.25rem)',
+                lineHeight: 1.65,
+                color: 'var(--brand-grey-slate)',
+                maxWidth: '620px',
+                marginBottom: '30px'
               }}
             >
-              <CheckCircle2 size={13} color="#16A34A" /> ISO 9001:2015
-            </div>
-          </div>
+              Manufacturer and global exporter of high-yield <strong>Harithols (Naphthols)</strong> and diazo <strong>Fast Colour Bases</strong>.
+              Engineered for insoluble in-situ azo color generation across cellulosic textiles, cotton yarns, printing pastes, and export pigments.
+            </p>
 
-          {/* Main Headline */}
-          <h1
-            style={{
-              fontSize: 'clamp(2.3rem, 4vw, 3.4rem)',
-              fontWeight: 900,
-              lineHeight: 1.15,
-              letterSpacing: '-0.03em',
-              color: 'var(--brand-grey-dark)',
-              marginBottom: '18px'
-            }}
-          >
-            Precision <span style={{ color: 'var(--brand-red)' }}>Naphthols</span>, Fast Bases &amp; Azoic Colorants.
-          </h1>
-
-          {/* Sub-Headline */}
-          <p
-            style={{
-              fontSize: '1.05rem',
-              lineHeight: 1.62,
-              color: 'var(--brand-grey-slate)',
-              marginBottom: '26px'
-            }}
-          >
-            Manufacturer and global exporter of high-yield <strong>Harithols (Naphthols)</strong> and diazo <strong>Fast Colour Bases</strong>. 
-            Engineered for insoluble in-situ azo color generation across cellulosic textiles, cotton yarns, and printing pastes.
-          </p>
-
-          {/* Action Buttons Group */}
-          <div
-            className="hero-buttons-group"
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '12px',
-              marginBottom: '28px'
-            }}
-          >
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => onOpenRfq()}
-              style={{
-                boxShadow: 'var(--shadow-red-glow)',
-                fontWeight: 700,
-                padding: '12px 22px'
-              }}
-            >
-              <Sparkles size={17} />
-              <span>Request Quotation / RFQ</span>
-            </button>
-
-            <Link
-              to="/products"
-              className="btn btn-secondary"
-              style={{
-                fontWeight: 600,
-                padding: '12px 20px'
-              }}
-            >
-              <span>Browse Catalog</span>
-              <ArrowRight size={16} />
-            </Link>
-
-            <Link
-              to="/shade-card"
-              className="btn btn-outline-red"
-              style={{
-                fontWeight: 600,
-                padding: '12px 20px'
-              }}
-            >
-              <span>Shade Card</span>
-            </Link>
-          </div>
-
-          {/* Quick Technical Highlights */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '14px',
-              borderTop: '1px solid var(--brand-grey-light)',
-              paddingTop: '18px',
-              marginBottom: '24px'
-            }}
-            className="hero-highlights"
-          >
-            <div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--brand-red)' }}>
-                28+
-              </div>
-              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.3 }}>
-                Years Manufacturing
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--brand-grey-dark)' }}>
-                3,000+
-              </div>
-              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.3 }}>
-                MT Annual Capacity
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--brand-grey-dark)' }}>
-                5,500+
-              </div>
-              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.3 }}>
-                Global Textile Clients
-              </div>
-            </div>
-          </div>
-
-          {/* Shifted Industrial Facility Parameters & Document Box */}
-          <div
-            className="hero-parameters-bar"
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(12px)',
-              borderRadius: 'var(--radius-md)',
-              padding: '13px 16px',
-              border: '1px solid var(--brand-grey-light)',
-              boxShadow: 'var(--shadow-sm)'
-            }}
-          >
+            {/* Action Buttons Group */}
             <div
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
                 flexWrap: 'wrap',
-                gap: '8px',
-                marginBottom: '10px',
-                paddingBottom: '8px',
-                borderBottom: '1px solid var(--brand-grey-light)'
+                gap: '14px',
+                marginBottom: '38px'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Building2 size={14} color="var(--brand-red)" />
-                <span style={{ fontSize: '0.76rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Facility Parameters
-                </span>
-                <span
-                  style={{
-                    fontSize: '0.68rem',
-                    fontWeight: 700,
-                    color: 'var(--brand-red)',
-                    backgroundColor: 'var(--brand-red-light)',
-                    padding: '2px 6px',
-                    borderRadius: '4px'
-                  }}
-                >
-                  Audited 2026
-                </span>
-              </div>
+              <button
+                type="button"
+                className="btn btn-primary btn-lg"
+                onClick={() => onOpenRfq()}
+                style={{
+                  boxShadow: 'var(--shadow-red-glow)',
+                  fontWeight: 700
+                }}
+              >
+                <Sparkles size={18} />
+                <span>Request Quotation / RFQ</span>
+              </button>
 
-              {/* Instant Download Quick Links */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <a
-                  href="/docs/Harihar_Chemicals_Shade_Card.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    padding: '4px 8px',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--brand-grey-light)',
-                    borderRadius: '5px',
-                    fontSize: '0.72rem',
-                    fontWeight: 700,
-                    color: 'var(--brand-grey-dark)',
-                    textDecoration: 'none',
-                    transition: '0.15s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--brand-red)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--brand-grey-light)'}
-                >
-                  <Download size={11} color="var(--brand-red)" />
-                  Shade Card (PDF)
-                </a>
+              <Link
+                to="/products"
+                className="btn btn-secondary btn-lg"
+                style={{
+                  fontWeight: 600
+                }}
+              >
+                <span>Browse Catalog</span>
+                <ArrowRight size={18} />
+              </Link>
 
-                <a
-                  href="/docs/Harihar_Chemicals_Brochure.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    padding: '4px 8px',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--brand-grey-light)',
-                    borderRadius: '5px',
-                    fontSize: '0.72rem',
-                    fontWeight: 700,
-                    color: 'var(--brand-grey-dark)',
-                    textDecoration: 'none',
-                    transition: '0.15s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--brand-red)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--brand-grey-light)'}
-                >
-                  <Download size={11} color="var(--brand-red)" />
-                  Brochure (PDF)
-                </a>
-              </div>
+              <Link
+                to="/shade-card"
+                className="btn btn-outline-red btn-lg"
+                style={{
+                  fontWeight: 600
+                }}
+              >
+                <span>Shade Card</span>
+              </Link>
             </div>
 
-            {/* 4 Technical Parameter Specifications */}
+            {/* Quick Technical Highlights */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '10px 16px'
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '16px',
+                borderTop: '1px solid var(--brand-grey-light)',
+                paddingTop: '24px'
               }}
+              className="hero-highlights"
             >
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--brand-grey-medium)', fontWeight: 600, textTransform: 'uppercase' }}>
-                  Quality Management
+                <div style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--brand-red)' }}>
+                  28+
                 </div>
-                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: 'var(--brand-grey-dark)', display: 'flex', alignItems: 'center', gap: '5px', marginTop: '2px' }}>
-                  <CheckCircle2 size={14} color="#16A34A" /> ISO 9001:2015
-                </div>
-              </div>
-
-              <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--brand-grey-medium)', fontWeight: 600, textTransform: 'uppercase' }}>
-                  In-House QC Testing
-                </div>
-                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: 'var(--brand-grey-dark)', marginTop: '2px' }}>
-                  Auto IR Dyeing &amp; UV-VIS
+                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.35 }}>
+                  Years Manufacturing
                 </div>
               </div>
 
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--brand-grey-medium)', fontWeight: 600, textTransform: 'uppercase' }}>
-                  Substantivity Range
+                <div style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--brand-grey-dark)' }}>
+                  3,000+
                 </div>
-                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: 'var(--brand-red)', marginTop: '2px' }}>
-                  10% to 40% (AS-SW Grade)
+                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.35 }}>
+                  MT Annual Capacity
                 </div>
               </div>
 
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--brand-grey-medium)', fontWeight: 600, textTransform: 'uppercase' }}>
-                  Export Logistics
+                <div style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--brand-grey-dark)' }}>
+                  5,500+
                 </div>
-                <div style={{ fontSize: '0.86rem', fontWeight: 800, color: 'var(--brand-grey-dark)', marginTop: '2px' }}>
-                  Harihar Impex &amp; Global Network
+                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--brand-grey-medium)', lineHeight: 1.35 }}>
+                  Global Textile Clients
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: High-Precision Facility Card & Authentic Gate Photo */}
+          <div>
+            <div
+              className="card-clean hero-facility-card"
+              style={{
+                position: 'relative',
+                borderRadius: 'var(--radius-lg)',
+                padding: '20px',
+                backgroundColor: '#FFFFFF',
+                boxShadow: '0 20px 45px -15px rgba(15, 23, 42, 0.12)',
+                border: '1px solid var(--brand-grey-light)'
+              }}
+            >
+              {/* Plant Entrance Photo */}
+              <div
+                style={{
+                  position: 'relative',
+                  height: '270px',
+                  borderRadius: 'calc(var(--radius-lg) - 6px)',
+                  overflow: 'hidden',
+                  marginBottom: '18px',
+                  backgroundColor: '#0F172A',
+                  border: '1px solid var(--brand-grey-light)'
+                }}
+              >
+                <img
+                  src="/images/plant_facility_exterior.jpg"
+                  alt="Harihar Chemicals Manufacturing Facility - Plot J-5248 GIDC Ankleshwar"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    backgroundColor: 'rgba(15, 23, 42, 0.88)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    color: '#FFFFFF',
+                    padding: '6px 12px',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: '0.76rem',
+                    fontWeight: 700,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    border: '1px solid rgba(255, 255, 255, 0.15)'
+                  }}
+                >
+                  <Building2 size={13} color="var(--brand-red)" />
+                  Plot J-5248 • G.I.D.C. Ankleshwar
+                </div>
+
+
+              </div>
+
+              {/* Technical Specifications Matrix Card */}
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-secondary)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '18px 20px',
+                  border: '1px solid var(--brand-grey-light)'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Industrial Facility Parameters
+                  </span>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--brand-red)', fontWeight: 700 }}>
+                    Audited 2026
+                  </span>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.86rem' }}>
+                    <span style={{ color: 'var(--brand-grey-slate)' }}>Quality Management:</span>
+                    <span style={{ fontWeight: 700, color: 'var(--brand-grey-dark)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <CheckCircle2 size={14} color="#16A34A" /> ISO 9001:2015
+                    </span>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.86rem' }}>
+                    <span style={{ color: 'var(--brand-grey-slate)' }}>In-House QC Testing:</span>
+                    <span style={{ fontWeight: 700, color: 'var(--brand-grey-dark)' }}>
+                      Auto IR Dyeing &amp; UV-VIS
+                    </span>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.86rem' }}>
+                    <span style={{ color: 'var(--brand-grey-slate)' }}>Substantivity Range:</span>
+                    <span style={{ fontWeight: 700, color: 'var(--brand-red)' }}>
+                      10% to 40% (AS-SW)
+                    </span>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.86rem' }}>
+                    <span style={{ color: 'var(--brand-grey-slate)' }}>Export Logistics:</span>
+                    <span style={{ fontWeight: 700, color: 'var(--brand-grey-dark)' }}>
+                      Harihar Impex &amp; Global Network
+                    </span>
+                  </div>
+                </div>
+
+                {/* Instant Download Quick Strip */}
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '10px',
+                    marginTop: '16px',
+                    paddingTop: '14px',
+                    borderTop: '1px dashed var(--brand-grey-light)'
+                  }}
+                >
+                  <a
+                    href="/docs/Harihar_Chemicals_Shade_Card.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      padding: '8px 12px',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid var(--brand-grey-light)',
+                      borderRadius: '6px',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-grey-dark)',
+                      textDecoration: 'none',
+                      transition: '0.15s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--brand-red)'}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--brand-grey-light)'}
+                  >
+                    <Download size={13} color="var(--brand-red)" />
+                    Shade Card (PDF)
+                  </a>
+
+                  <a
+                    href="/docs/Harihar_Chemicals_Brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      padding: '8px 12px',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid var(--brand-grey-light)',
+                      borderRadius: '6px',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-grey-dark)',
+                      textDecoration: 'none',
+                      transition: '0.15s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--brand-red)'}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--brand-grey-light)'}
+                  >
+                    <Download size={13} color="var(--brand-red)" />
+                    Brochure (PDF)
+                  </a>
                 </div>
               </div>
             </div>
@@ -399,46 +392,18 @@ export default function Hero({ onOpenRfq }) {
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 992px) {
-          #hero-section {
-            background-position: center top !important;
-            padding: 38px 0 44px 0 !important;
-          }
-          .hero-overlay-fade {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 55%, rgba(255, 255, 255, 0.88) 100%) !important;
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
           }
         }
         @media (max-width: 576px) {
-          .hero-buttons-group .btn-primary {
-            width: 100% !important;
-            justify-content: center !important;
-          }
-          .hero-buttons-group .btn-secondary,
-          .hero-buttons-group .btn-outline-red {
-            flex: 1 1 calc(50% - 6px) !important;
-            justify-content: center !important;
-            text-align: center !important;
-            padding: 10px 12px !important;
-            font-size: 0.86rem !important;
-          }
-          .hero-highlights {
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 8px !important;
-          }
-          .hero-highlights > div > div:first-child {
-            font-size: 1.35rem !important;
-          }
-          .hero-highlights > div > div:last-child {
-            font-size: 0.7rem !important;
-          }
-        }
-        @media (max-width: 380px) {
           .hero-highlights {
             grid-template-columns: 1fr !important;
-            gap: 10px !important;
+            gap: 16px !important;
           }
         }
       `}</style>
     </section>
   );
 }
-
