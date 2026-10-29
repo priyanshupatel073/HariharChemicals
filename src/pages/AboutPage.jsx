@@ -73,68 +73,53 @@ export default function AboutPage({ onOpenRfq }) {
               </div>
             </div>
 
-            {/* Factory Gate Photo Space - Reserved for Upload */}
+            {/* Factory Gate Exterior Photo */}
             <div
               style={{
+                position: 'relative',
                 borderRadius: 'var(--radius-lg)',
                 overflow: 'hidden',
-                boxShadow: 'var(--shadow-sm)',
-                border: '2px dashed var(--brand-grey-light)',
-                backgroundColor: 'var(--bg-secondary)',
-                minHeight: '340px',
+                boxShadow: 'var(--shadow-md)',
+                border: '1px solid var(--brand-grey-light)',
+                backgroundColor: '#0F172A',
+                minHeight: '360px',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                padding: '24px'
+                alignItems: 'stretch'
               }}
             >
-              <div
+              <img
+                src="/images/plant_facility_exterior.jpg"
+                alt="Harihar Chemicals Primary Manufacturing Plant - Plot J-5248, GIDC Ankleshwar"
+                loading="lazy"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flex: 1,
-                  color: 'var(--brand-grey-medium)',
-                  gap: '8px'
+                  width: '100%',
+                  height: '100%',
+                  minHeight: '360px',
+                  objectFit: 'cover',
+                  display: 'block'
                 }}
-              >
-                <div
-                  style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '14px',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--brand-grey-light)',
-                    boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--brand-grey-medium)'
-                  }}
-                >
-                  <Building2 size={26} color="var(--brand-red)" />
-                </div>
-                <span style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--brand-grey-slate)' }}>
-                  Manufacturing Facility Photo Space
-                </span>
-                <span style={{ fontSize: '0.78rem', color: 'var(--brand-grey-medium)' }}>
-                  Reserved for high-resolution exterior plant photography
-                </span>
-              </div>
+              />
 
               <div
                 style={{
+                  position: 'absolute',
+                  bottom: '16px',
+                  left: '16px',
+                  right: '16px',
                   padding: '14px 18px',
                   borderRadius: 'var(--radius-sm)',
-                  backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                  color: '#FFFFFF'
+                  backgroundColor: 'rgba(15, 23, 42, 0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  color: '#FFFFFF',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)'
                 }}
               >
-                <div style={{ fontSize: '0.76rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171' }}>
+                <div style={{ fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', color: '#F87171', letterSpacing: '0.04em' }}>
                   Primary Manufacturing Plant
                 </div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 700 }}>
+                <div style={{ fontSize: '1.05rem', fontWeight: 700, marginTop: '2px' }}>
                   Plot No. J-5248, G.I.D.C. Ankleshwar, Gujarat
                 </div>
               </div>
