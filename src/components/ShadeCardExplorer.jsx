@@ -11,13 +11,16 @@ import {
   ArrowRight,
   ShieldCheck,
   Flame,
-  Award
+  Award,
+  ChevronDown
 } from 'lucide-react';
 
 export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
   const [selectedNaphtholCode, setSelectedNaphtholCode] = useState('AS');
   const [selectedBaseCode, setSelectedBaseCode] = useState('Scarlet G');
   const [activeDepth, setActiveDepth] = useState('4%'); // '1%' or '4%'
+  const [mobileNaphtholOpen, setMobileNaphtholOpen] = useState(true);
+  const [mobileBaseOpen, setMobileBaseOpen] = useState(true);
 
   // Find current combination or fallback
   const currentCombination = SHADE_COMBINATIONS.find(
@@ -64,115 +67,208 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
         >
           {/* Controls Column (Left) */}
           <div>
+            {/* Mobile Collapse/Expand Quick Toolbar (Only on mobile <= 768px) */}
+            <div className="mobile-collapse-toolbar mobile-collapse-only" style={{ marginBottom: '16px' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  const anyOpen = mobileNaphtholOpen || mobileBaseOpen;
+                  setMobileNaphtholOpen(!anyOpen);
+                  setMobileBaseOpen(!anyOpen);
+                }}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '9px 14px',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid var(--brand-red-border)',
+                  borderRadius: '8px',
+                  color: 'var(--brand-red)',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
+                }}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <Sliders size={14} />
+                  <span>{(mobileNaphtholOpen || mobileBaseOpen) ? 'Collapse Selectors to View Shade Result' : 'Expand Selectors to Change Color'}</span>
+                </span>
+                <ChevronDown size={15} style={{ transform: (mobileNaphtholOpen || mobileBaseOpen) ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }} />
+              </button>
+            </div>
+
             {/* Step 1: Select Naphthol (Harithol) */}
-            <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                <label style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  1. Select Harithol / Naphthol (Grounding):
-                </label>
-                <span className="ci-badge">C.I. {currentNaphthol.ciNo}</span>
+            <div className="shade-selector-card" style={{ marginBottom: '24px' }}>
+              <div 
+                className="shade-selector-header"
+                onClick={() => setMobileNaphtholOpen(!mobileNaphtholOpen)}
+                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <label style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer' }}>
+                    1. Select Harithol / Naphthol (Grounding):
+                  </label>
+                  <span className="ci-badge">C.I. {currentNaphthol.ciNo}</span>
+                </div>
+
+                <div className="mobile-collapse-only" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span
+                    style={{
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-red)',
+                      backgroundColor: 'var(--brand-red-light)',
+                      padding: '2px 8px',
+                      borderRadius: '4px'
+                    }}
+                  >
+                    Active: {selectedNaphtholCode}
+                  </span>
+                  <ChevronDown
+                    size={16}
+                    className={`mobile-chevron ${mobileNaphtholOpen ? 'rotated' : ''}`}
+                    color="var(--brand-red)"
+                  />
+                </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(95px, 1fr))', gap: '8px' }}>
-                {NAPHTHOL_PRODUCTS.map((n) => {
-                  const isSelected = n.code === selectedNaphtholCode;
-                  return (
-                    <button
-                      key={n.code}
-                      type="button"
-                      onClick={() => setSelectedNaphtholCode(n.code)}
-                      style={{
-                        padding: '10px 8px',
-                        borderRadius: 'var(--radius-sm)',
-                        fontSize: '0.82rem',
-                        fontWeight: isSelected ? 800 : 600,
-                        backgroundColor: isSelected ? 'var(--brand-red)' : '#FFFFFF',
-                        color: isSelected ? '#FFFFFF' : 'var(--brand-grey-dark)',
-                        border: isSelected ? '1px solid var(--brand-red)' : '1px solid var(--brand-grey-light)',
-                        cursor: 'pointer',
-                        textAlign: 'center',
-                        transition: 'all 0.15s ease',
-                        boxShadow: isSelected ? 'var(--shadow-red-glow)' : 'none'
-                      }}
-                    >
-                      {n.code}
-                      <span
+              <div className={`shade-selector-content ${mobileNaphtholOpen ? 'is-expanded' : 'is-collapsed'}`}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(95px, 1fr))', gap: '8px' }}>
+                  {NAPHTHOL_PRODUCTS.map((n) => {
+                    const isSelected = n.code === selectedNaphtholCode;
+                    return (
+                      <button
+                        key={n.code}
+                        type="button"
+                        onClick={() => setSelectedNaphtholCode(n.code)}
                         style={{
-                          display: 'block',
-                          fontSize: '0.68rem',
-                          fontWeight: 400,
-                          opacity: isSelected ? 0.9 : 0.65,
-                          marginTop: '2px'
+                          padding: '10px 8px',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.82rem',
+                          fontWeight: isSelected ? 800 : 600,
+                          backgroundColor: isSelected ? 'var(--brand-red)' : '#FFFFFF',
+                          color: isSelected ? '#FFFFFF' : 'var(--brand-grey-dark)',
+                          border: isSelected ? '1px solid var(--brand-red)' : '1px solid var(--brand-grey-light)',
+                          cursor: 'pointer',
+                          textAlign: 'center',
+                          transition: 'all 0.15s ease',
+                          boxShadow: isSelected ? 'var(--shadow-red-glow)' : 'none'
                         }}
                       >
-                        Sub: {n.substantivity}
-                      </span>
-                    </button>
-                  );
-                })}
+                        {n.code}
+                        <span
+                          style={{
+                            display: 'block',
+                            fontSize: '0.68rem',
+                            fontWeight: 400,
+                            opacity: isSelected ? 0.9 : 0.65,
+                            marginTop: '2px'
+                          }}
+                        >
+                          Sub: {n.substantivity}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
             {/* Step 2: Select Fast Colour Base (Developing) */}
-            <div style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                <label style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  2. Select Fast Colour Base (Diazo Coupling):
-                </label>
-                <span style={{ fontSize: '0.8rem', color: 'var(--brand-red)', fontWeight: 700 }}>
-                  {currentBase.diazotisationMethod.split(' ')[0]} {currentBase.diazotisationMethod.split(' ')[1]}
-                </span>
+            <div className="shade-selector-card" style={{ marginBottom: '24px' }}>
+              <div 
+                className="shade-selector-header"
+                onClick={() => setMobileBaseOpen(!mobileBaseOpen)}
+                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <label style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--brand-grey-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer' }}>
+                    2. Select Fast Colour Base (Diazo Coupling):
+                  </label>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--brand-red)', fontWeight: 700 }}>
+                    {currentBase.diazotisationMethod.split(' ')[0]} {currentBase.diazotisationMethod.split(' ')[1]}
+                  </span>
+                </div>
+
+                <div className="mobile-collapse-only" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span
+                    style={{
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-grey-dark)',
+                      backgroundColor: 'var(--bg-tertiary)',
+                      padding: '2px 8px',
+                      borderRadius: '4px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px'
+                    }}
+                  >
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: currentBase.shadeHex }} />
+                    {selectedBaseCode}
+                  </span>
+                  <ChevronDown
+                    size={16}
+                    className={`mobile-chevron ${mobileBaseOpen ? 'rotated' : ''}`}
+                    color="var(--brand-red)"
+                  />
+                </div>
               </div>
 
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
-                  gap: '8px',
-                  maxHeight: '260px',
-                  overflowY: 'auto',
-                  paddingRight: '6px'
-                }}
-              >
-                {FAST_BASE_PRODUCTS.map((b) => {
-                  const isSelected = b.code === selectedBaseCode;
-                  return (
-                    <button
-                      key={b.code}
-                      type="button"
-                      onClick={() => setSelectedBaseCode(b.code)}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '8px 10px',
-                        borderRadius: 'var(--radius-sm)',
-                        fontSize: '0.8rem',
-                        fontWeight: isSelected ? 800 : 500,
-                        backgroundColor: isSelected ? 'var(--brand-grey-dark)' : '#FFFFFF',
-                        color: isSelected ? '#FFFFFF' : 'var(--brand-grey-dark)',
-                        border: isSelected ? '1px solid var(--brand-grey-dark)' : '1px solid var(--brand-grey-light)',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        transition: 'all 0.15s ease'
-                      }}
-                    >
-                      <span
+              <div className={`shade-selector-content ${mobileBaseOpen ? 'is-expanded' : 'is-collapsed'}`}>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
+                    gap: '8px',
+                    maxHeight: '260px',
+                    overflowY: 'auto',
+                    paddingRight: '6px'
+                  }}
+                >
+                  {FAST_BASE_PRODUCTS.map((b) => {
+                    const isSelected = b.code === selectedBaseCode;
+                    return (
+                      <button
+                        key={b.code}
+                        type="button"
+                        onClick={() => setSelectedBaseCode(b.code)}
                         style={{
-                          width: '12px',
-                          height: '12px',
-                          borderRadius: '50%',
-                          backgroundColor: b.shadeHex,
-                          flexShrink: 0,
-                          border: '1px solid rgba(0,0,0,0.2)'
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          padding: '8px 10px',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.8rem',
+                          fontWeight: isSelected ? 800 : 500,
+                          backgroundColor: isSelected ? 'var(--brand-grey-dark)' : '#FFFFFF',
+                          color: isSelected ? '#FFFFFF' : 'var(--brand-grey-dark)',
+                          border: isSelected ? '1px solid var(--brand-grey-dark)' : '1px solid var(--brand-grey-light)',
+                          cursor: 'pointer',
+                          textAlign: 'left',
+                          transition: 'all 0.15s ease'
                         }}
-                      />
-                      <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {b.code}
-                      </span>
-                    </button>
-                  );
-                })}
+                      >
+                        <span
+                          style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            backgroundColor: b.shadeHex,
+                            flexShrink: 0,
+                            border: '1px solid rgba(0,0,0,0.2)'
+                          }}
+                        />
+                        <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          {b.code}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
@@ -449,6 +545,65 @@ export default function ShadeCardExplorer({ onSelectRecipeForRfq }) {
       </div>
 
       <style>{`
+        /* Smooth Collapse Animation (Mobile-only) */
+        .shade-selector-content {
+          overflow: hidden;
+          transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+                      opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-origin: top center;
+        }
+
+        @media (max-width: 768px) {
+          .shade-selector-content.is-collapsed {
+            max-height: 0px !important;
+            opacity: 0 !important;
+            transform: scaleY(0.96) translateY(-4px) !important;
+            pointer-events: none !important;
+            margin-bottom: 0px !important;
+          }
+          .shade-selector-content.is-expanded {
+            max-height: 560px !important;
+            opacity: 1 !important;
+            transform: scaleY(1) translateY(0) !important;
+            pointer-events: auto !important;
+          }
+          .shade-selector-header {
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            padding: 10px 14px;
+            background-color: #FFFFFF;
+            border: 1px solid var(--brand-grey-light);
+            border-radius: var(--radius-sm);
+            margin-bottom: 10px;
+            transition: all 0.18s ease;
+          }
+          .shade-selector-header:active {
+            background-color: var(--brand-red-light);
+            border-color: var(--brand-red-border);
+          }
+          .mobile-chevron {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .mobile-chevron.rotated {
+            transform: rotate(180deg);
+          }
+        }
+
+        @media (min-width: 769px) {
+          .mobile-collapse-only {
+            display: none !important;
+          }
+          .shade-selector-content {
+            max-height: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+            display: block !important;
+            pointer-events: auto !important;
+          }
+        }
+
         @media (max-width: 992px) {
           .shade-card-grid {
             grid-template-columns: 1fr !important;
