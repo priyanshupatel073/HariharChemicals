@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { COMPANY_INFO } from '../data/chemicalsData';
-import { 
-  ShieldCheck, 
-  Award, 
-  CheckCircle2, 
-  Clock, 
-  Activity, 
-  Eye, 
-  X, 
+import {
+  ShieldCheck,
+  Award,
+  CheckCircle2,
+  Clock,
+  Activity,
+  Eye,
+  X,
   Download,
   FileCheck,
   Building,

@@ -9,6 +9,8 @@ node_modules
 !public/**
 take_screenshots.py
 verify_placeholders.py
+verify_mobile.py
+verify_collapse.py
 
 # Production build
 /dist
@@ -26,4 +28,3 @@ verify_placeholders.py
 
 # Vite
 vite.config.js.timestamp-*
-
